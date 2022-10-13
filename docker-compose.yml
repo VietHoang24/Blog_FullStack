@@ -1,0 +1,19 @@
+version: '3'
+services:
+  server:
+    image: bs32g1038/node-blog:v5
+    depends_on:
+      - db
+    volumes:
+      - ../data/logs:/code/logs
+      - ../data/blog/static:/code/public/static
+    command: npm run start:prod --MONGODB_HOSTNAME=db
+    environment:
+      - MONGODB_URL=mongodb://db:27017/blog
+    ports:
+      - 8080:8080
+  db:
+    image: mongo:5.0.4
+    volumes:
+      - ../data/mongo-backup:/data/mongo-backup
+      - ../data/mongo-db:/data/db

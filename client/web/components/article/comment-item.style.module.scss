@@ -1,0 +1,119 @@
+.commentItem {
+    padding: 10px;
+}
+.commentItemInner {
+    display: flex;
+    color: var(--secondary-text-color);
+}
+.commentItemRight {
+    width: 100%;
+}
+
+.commentHeaderLeft {
+    display: flex;
+    align-items: center;
+    color: var(--primary-text-color);
+    font-size: 14px;
+    color: #86909c;
+}
+.commentHeaderLeftContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.commentItemNickName {
+    font-weight: 500;
+    color: var(--primary-text-color);
+}
+.commentItemAvatar {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 2px;
+    margin-right: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.commentItemContent {
+    color: var(--primary-text-color);
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.commentHeaderTime {
+    margin-left: 5px;
+}
+.divide {
+    display: block;
+    width: 1px;
+    height: 14px;
+    background: var(--border-color);
+    margin: 0 8px;
+}
+
+.commentReplyItem {
+    background: var(--main-bg-color);
+}
+
+.commentItemReplyContent {
+    padding: 10px 12px 10px 0;
+    border-radius: 4px;
+}
+
+.parentWrapper {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 12px;
+    line-height: 36px;
+    height: 36px;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    align-items: center;
+    border-left: 2px dashed var(--border-color);
+}
+
+.parentContent {
+    flex-shrink: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 1;
+}
+
+.commentItemReplyInfo {
+    color: var(--secondary-text-color);
+    font-size: 14px;
+    justify-content: space-between;
+    span {
+        display: block;
+    }
+    .left {
+        color: var(--primary-text-color);
+        p {
+            margin: 0;
+        }
+    }
+    .replyNickName {
+        color: var(--primary-text-color);
+    }
+    .replyContent {
+        color: var(--primary-text-color);
+    }
+}
+
+.commentHeaderRight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.commentItemReplyAvatar {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 5px;
+    overflow: hidden;
+}
