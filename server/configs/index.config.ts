@@ -31,10 +31,10 @@ export const ADMIN_USER_INFO = {
 };
 
 export const RSS = {
-    title: '李志成的个人网站',
+    title: 'Salt Blog',
     link: 'http://www.lizc.net',
     language: 'zh-cn',
-    description: '博客小站，专注于web开发，尤其是前端开发。喜欢和同道中人一起搞开发！',
+    description: 'Trạm blog, tập trung vào phát triển web, đặc biệt là phát triển mặt trận.Tôi thích phát triển với những người trong Đạo!',
     maxRssItems: 50,
 };
 

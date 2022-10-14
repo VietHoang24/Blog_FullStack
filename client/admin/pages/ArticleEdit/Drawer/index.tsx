@@ -48,8 +48,9 @@ export default function Index({ visible, onCancel, formData }) {
             <Option key={category._id} value={category._id}>
                 {category.name}
             </Option>
+         
         ));
-            
+    categoryOptions.push(<Option key={"đay la key"} value="Truyện cười">Haha</Option>)
     return (
         <Drawer
             width="340px"

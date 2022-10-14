@@ -36,17 +36,17 @@ export class LoginService {
         const account = U.account;
         const password = U.password;
         const count = await this.userModel.countDocuments({});
-        const result = Joi.object(UserJoiSchema).validate(U);
+        // const result = Joi.object(UserJoiSchema).validate(U);
         console.log(U)
         if (count <= 0) {
             /**
              * 首次登陆，即为管理员账号，仅一次。
              */
-            if (result.error) {
-                throw new BadRequestException(
-                    'Bạn là người đăng nhập đầu tiên, tài khoản này sẽ là tài khoản quản trị viên của bạn, vui lòng nhớ 111!' + result.error.message
-                );
-            }
+            // if (result.error) {
+            //     throw new BadRequestException(
+            //         'Bạn là người đăng nhập đầu tiên, tài khoản này sẽ là tài khoản quản trị viên của bạn, vui lòng nhớ!' + result.error.message
+            //     );
+            // }
             const user = await this.userModel.create({
                 userName,
                 account,

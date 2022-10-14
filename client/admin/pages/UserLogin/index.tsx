@@ -36,9 +36,9 @@ export default function UserLogin() {
         <div className={style.signIn}>
             <div className={style.signInMain}>
                 <div className="header">
-                    <ReactSVG className="brand" src={appConfig.siteLogo} />
+                    <ReactSVG className="brand" src={appConfig?.siteLogo} />
                     <div className="header-title">
-                        <h2>{appConfig.siteTitle}</h2>
+                        <h2>{appConfig?.siteTitle}</h2>
                         <p>轻量级 NODE BLOG 系统</p>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ export default function UserLogin() {
                 <div className="nodeblog">
                     Powered by
                     <a
-                        href={appConfig.siteDomain}
+                        href={appConfig?.siteDomain}
                         title="轻量级nodeblog博客系统"
                         rel="noopener noreferrer"
                         target="_blank"

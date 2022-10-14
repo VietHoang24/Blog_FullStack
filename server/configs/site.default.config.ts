@@ -10,13 +10,13 @@ const smptConfig = {
 export type SmptConfigType = typeof smptConfig;
 
 const config = {
-    siteTitle: '李志成的个人网站',
-    siteMetaKeyWords: '李志成的个人网站，李志成的博客，web开发，nodejs全栈，前端工程师，后端开发，docker容器，生活日常',
+    siteTitle: 'Salt Blog ',
+    siteMetaKeyWords: 'Trang web cá nhân của Li Zhicheng, blog của Li Zhicheng, phát triển web, NodeJS Full Stack, Front -end Engineer, Back -end Development, Docker Container, Daily Life',
     siteMetaDescription:
-        '李志成的个人网站，专注于web开发，尤其是前端开发。喜欢做技术，也喜欢分享技术。本站主要是分享web相关文章内容，以及个人工作相关日志！',
+        'Trang web cá nhân của Li Zhicheng tập trung vào phát triển web, đặc biệt là phát triển mặt trận.Tôi thích làm công nghệ và thích chia sẻ công nghệ.Trang web này chủ yếu để chia sẻ nội dung của các bài viết liên quan đến Web, cũng như các bản ghi liên quan đến công việc cá nhân!',
     siteLogo: '/static/logo.svg',
 
-    siteIcp: '粤ICP备16021965号-3',
+    siteIcp: 'Quảng Đông ICP số 16021965 -3',
     icpGovCn: 'http://www.beian.miit.gov.cn',
 
     github: 'https://github.com/bs32g1038',

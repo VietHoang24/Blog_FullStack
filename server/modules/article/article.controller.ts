@@ -14,6 +14,7 @@ export class ArticleController {
     @Post('/articles')
     @Roles('admin')
     public async create(@JoiBody(ArticleJoiSchema, { method: 'post' }) article: Article) {
+        console.log("articles: v",article )
         return await this.articleService.create(article);
     }
 

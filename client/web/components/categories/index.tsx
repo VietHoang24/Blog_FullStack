@@ -12,7 +12,7 @@ const Categories = () => {
         <div className={style.categories}>
             <div className={style.categoriesInnter}>
                 <NavLink exact={true} href="/blog">
-                    <a className={style.categoryItemA}>全部</a>
+                    <a className={style.categoryItemA}>Danh mục</a>
                 </NavLink>
                 {data.map((item) => (
                     <NavLink key={item._id} href={`/blog/articles?cid=${item._id}`} exact={true}>

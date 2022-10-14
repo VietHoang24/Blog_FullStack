@@ -32,18 +32,18 @@ export const AppHeader = () => {
                 <NavLink href="/blog">
                     <a className={style.navA}>
                         <HomeOutlined></HomeOutlined>
-                        <span>首页</span>
+                        <span>Trang chủ</span>
                     </a>
                 </NavLink>
                 <NavLink href="/blog/expore">
                     <a className={style.navA}>
                         <ShareAltOutlined />
-                        <span>发现</span>
+                        <span>Tìm thấy</span>
                     </a>
                 </NavLink>
                 <a className={style.navA} onClick={() => scrollIntoView('app-footer')}>
                     <UserOutlined></UserOutlined>
-                    <span>关于</span>
+                    <span>Về</span>
                 </a>
                 <NavLink href="/blog/rss" target="_blank">
                     <a className={style.navA}>

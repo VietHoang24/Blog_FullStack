@@ -9,9 +9,9 @@ import Joi from '../joi';
 import mongoose from 'mongoose';
 
 export const UserJoiSchema = {
-    userName: Joi.string().min(1).max(30).required().error(new Error('用户名长度在1-30之间！')),
-    account: Joi.string().min(6).max(30).required().error(new Error('账号长度在6-30之间！')),
-    password: Joi.string().min(6).max(30).required().error(new Error('密码长度在6-30之间！')),
+    userName: Joi.string().min(1).max(30).required().error(new Error('Độ dài tên người dùng nằm trong khoảng từ 1-30！')),
+    account: Joi.string().min(6).max(30).required().error(new Error('Độ dài tài khoản nằm trong khoảng từ 6-30！')),
+    password: Joi.string().min(6).max(30).required().error(new Error('Độ dài mật khẩu nằm trong khoảng từ 6-30！')),
 };
 
 @Schema({

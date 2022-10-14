@@ -4,6 +4,7 @@ import { Document } from 'mongoose';
 import { getMongooseModule } from '../mongoose';
 import Joi from '../joi';
 import { Category } from './category.model';
+import { string } from 'joi';
 
 export const ArticleJoiSchema = {
     title: Joi.string()
@@ -34,7 +35,7 @@ export const ArticleJoiSchema = {
             post: (schema) => schema.required(),
         }),
     category: Joi.objectId().alter({
-        post: (schema) => schema.required(),
+        // post: (schema) => schema.required(),
     }),
     tags: Joi.array().items(Joi.string().max(20)),
 };

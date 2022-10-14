@@ -17,6 +17,7 @@ export class ArticleService {
     ) {}
 
     async create(articleDocument: Article) {
+        console.log("article là: ",articleDocument)
         const article = await this.articleModel.create(articleDocument);
         await this.categoryModel.updateOne({ _id: article.category }, { $inc: { articleCount: 1 } });
         return article;
