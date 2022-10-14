@@ -103,7 +103,7 @@ export const SearchForm = (props) => {
                 onFocus={onfocus}
                 onInput={oninput}
                 onBlur={onblur}
-                placeholder="请输入关键词"
+                placeholder="Vui lòng nhập từ khóa"
             />
             <div
                 onMouseDown={(event) => event.preventDefault()}
@@ -111,8 +111,8 @@ export const SearchForm = (props) => {
                 style={{ display: isActiveNavSearchDropdown ? 'block' : 'none' }}
             >
                 <div className={style.panelHeader}>
-                    博客
-                    <span onClick={foldNavList}>收起</span>
+                    Blog
+                    <span onClick={foldNavList}>Cất đi</span>
                 </div>
                 <SearchResultList items={items} isLoading={isLoading}></SearchResultList>
                 <SearchResultFooter isLoading={isLoading} totalCount={totalCount}></SearchResultFooter>

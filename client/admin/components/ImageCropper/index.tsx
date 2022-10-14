@@ -287,9 +287,9 @@ const ImageCropper: FC<ImageCropperProps> = (props) => {
 };
 
 ImageCropper.defaultProps = {
-    modalTitle: '裁剪图片',
-    modalOk: '确定',
-    modalCancel: '取消',
+    modalTitle: 'Cắt hình ảnh',
+    modalOk: 'Chắc chắn rồi',
+    modalCancel: 'Hủy bỏ',
 };
 
 export default ImageCropper;

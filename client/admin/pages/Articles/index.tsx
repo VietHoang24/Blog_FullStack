@@ -15,7 +15,7 @@ export default function Index() {
         pagination: {
             current: 1,
             total: 0,
-            showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} 条数据`,
+            showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} Dữ liệu bài viết`,
         },
         selectedRowKeys: [],
         loading: false,
@@ -49,7 +49,7 @@ export default function Index() {
     };
     const deleteArticle = (_id) => {
         axios.delete('/articles/' + _id).then(() => {
-            message.success('删除文章成功！');
+            message.success('Xóa bài viết thành công!');
             fetchData();
         });
     };
@@ -60,20 +60,20 @@ export default function Index() {
             })
             .then((res) => {
                 if (res && res.data && res.data.deletedCount > 0) {
-                    message.success('删除文章成功！');
+                    message.success('Xóa bài viết thành công!');
                     setState((data) => ({
                         ...data,
                         selectedRowKeys: [],
                     }));
                     return fetchData();
                 }
-                return message.error('删除文章失败，请重新尝试。');
+                return message.error('Xóa bài viết không thành công, vui lòng thử lại。');
             });
     };
     const getTableColums = () => {
         return [
             {
-                title: '文章摘要',
+                title: 'Tóm tắt',
                 dataIndex: 'title',
                 render: (text, record) => (
                     <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -96,16 +96,16 @@ export default function Index() {
                             <div>
                                 <Button
                                     size="small"
-                                    title="编辑"
+                                    title="Chỉnh sửa"
                                     type="link"
                                     icon={<EditFilled />}
                                     onClick={() => Router.push('/admin/content/articles/edit/' + record._id)}
                                 >
-                                    编辑
+                                    Chỉnh sửa
                                 </Button>
-                                <Popconfirm title="确认要删除？" onConfirm={() => deleteArticle(record._id)}>
-                                    <Button danger type="link" size="small" title="删除" icon={<DeleteFilled />}>
-                                        删除
+                                <Popconfirm title="Xác nhận rằng bạn muốn xóa?" onConfirm={() => deleteArticle(record._id)}>
+                                    <Button danger type="link" size="small" title="Xóa bỏ" icon={<DeleteFilled />}>
+                                        Xóa
                                     </Button>
                                 </Popconfirm>
                             </div>
@@ -114,29 +114,29 @@ export default function Index() {
                 ),
             },
             {
-                title: '分类',
+                title: 'Danh mục',
                 dataIndex: 'category',
                 width: 100,
-                render: (text, record) => (record.category ? record.category.name : '未分类'),
+                render: (text, record) => (record.category ? record.category.name : 'Chưa được phân loại'),
             },
             {
-                title: '浏览数',
+                title: 'Lượt xem',
                 dataIndex: 'viewsCount',
                 width: 80,
             },
             {
-                title: '评论数',
+                title: 'Lượt comments',
                 dataIndex: 'commentCount',
                 width: 80,
             },
             {
-                title: '状态',
+                title: 'Trạng thái',
                 dataIndex: 'isDraft',
                 render: (text, record) =>
-                    record.isDraft ? <Tag color="rgb(229, 239, 245);">草稿</Tag> : <Tag color="default">已发布</Tag>,
+                    record.isDraft ? <Tag color="rgb(229, 239, 245);">Dự thảo</Tag> : <Tag color="default">Được phát hành</Tag>,
             },
             {
-                title: '创建时间',
+                title: 'Thời điểm tạo',
                 dataIndex: 'createdAt',
                 width: 160,
                 render: (text, record) => parseTime(record.createdAt),
@@ -175,16 +175,16 @@ export default function Index() {
                     icon={<PlusOutlined />}
                     onClick={() => Router.push('/admin/content/articles/edit')}
                 >
-                    添加文档
+                    Thêm một tài liệu
                 </Button>
                 <Popconfirm
-                    title="确认要删除？"
+                    title="Xác nhận rằng bạn muốn xóa?"
                     placement="right"
                     visible={state.visible}
                     onConfirm={() => batchDeleteArticle()}
                     onVisibleChange={() => {
                         if (state.selectedRowKeys.length <= 0) {
-                            message.info('请选择要删除的文章');
+                            message.info('Vui lòng chọn một bài viết sẽ bị xóa');
                             return;
                         }
                         setState((data) => ({
@@ -194,7 +194,7 @@ export default function Index() {
                     }}
                 >
                     <Button danger={true} icon={<DeleteFilled />}>
-                        批量删除
+                        Xóa hàng loạt
                     </Button>
                 </Popconfirm>
             </Space>
@@ -202,7 +202,7 @@ export default function Index() {
                 <Input
                     type="text"
                     name="searchTitle"
-                    placeholder="请输入文章标题关键词"
+                    placeholder="Vui lòng nhập từ khóa tiêu đề bài viết"
                     value={state.searchKey}
                     onChange={(e) => {
                         const value = e.currentTarget.value;
@@ -219,7 +219,7 @@ export default function Index() {
                         fetchData();
                     }}
                 >
-                    查询
+                    Tìm kiếm
                 </Button>
                 <Button
                     type="primary"
@@ -232,7 +232,7 @@ export default function Index() {
                         }));
                     }}
                 >
-                    重置
+                    nhập lại
                 </Button>
             </Space>
         </Row>

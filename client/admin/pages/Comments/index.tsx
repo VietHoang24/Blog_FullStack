@@ -42,7 +42,7 @@ export default function Comments() {
     };
     const deleteComment = (_id) => {
         axios.delete('/comments/' + _id).then(() => {
-            message.success('删除评论成功');
+            message.success('Xóa bình luận thành công');
             fetchData();
         });
     };
@@ -53,14 +53,14 @@ export default function Comments() {
             })
             .then((res) => {
                 if (res && res.data && res.data.deletedCount > 0) {
-                    message.success('删除评论成功！');
+                    message.success('Xóa các ý kiến ​​thành công!');
                     setState((data) => ({
                         ...data,
                         selectedRowKeys: [],
                     }));
                     return fetchData();
                 }
-                return message.error('删除评论失败，请重新尝试。');
+                return message.error('Xóa bình luận không thành công, vui lòng thử lại.');
             });
     };
     const handleTableChange = (pagination) => {
@@ -85,7 +85,7 @@ export default function Comments() {
     const getTableColums = () => {
         return [
             {
-                title: '昵称',
+                title: 'Tên nick',
                 dataIndex: 'nickName',
                 width: 160,
             },
@@ -95,18 +95,18 @@ export default function Comments() {
                 width: 100,
             },
             {
-                title: '创建时间',
+                title: 'Thời gian',
                 dataIndex: 'createdAt',
                 width: 140,
                 render: (text, record) => timeAgo(record.createdAt),
             },
             {
-                title: '文章标题',
+                title: 'Tiêu đề bài viết',
                 dataIndex: 'article',
                 render: (text, record) => (record.article && record.article.title) || '--',
             },
             {
-                title: '操作',
+                title: 'Hành động',
                 key: 'operation',
                 width: 180,
                 render: (text, record) => (
@@ -118,12 +118,12 @@ export default function Comments() {
                             icon={<EditFilled />}
                             onClick={() => Router.push('/admin/content/comments/reply/' + record._id)}
                         >
-                            回复
+                            Phản hồi
                         </Button>
                         ,
-                        <Popconfirm title="确认要删除？" onConfirm={() => deleteComment(record._id)}>
-                            <Button danger={true} size="small" title="删除" icon={<DeleteFilled />}>
-                                删除
+                        <Popconfirm title="Xác nhận rằng bạn muốn xóa?" onConfirm={() => deleteComment(record._id)}>
+                            <Button danger={true} size="small" title="xóa bỏ" icon={<DeleteFilled />}>
+                                Xóa
                             </Button>
                         </Popconfirm>
                     </div>
@@ -139,12 +139,12 @@ export default function Comments() {
     const expandedRowKeys = state.comments.map((item) => item._id);
     const CTitle = (
         <Popconfirm
-            title="确认要删除？"
+            title="Xác nhận rằng bạn muốn xóa?"
             placement="right"
             visible={state.visiable}
             onVisibleChange={() => {
                 if (state.selectedRowKeys.length <= 0) {
-                    message.info('请选择要删除的评论');
+                    message.info('Vui lòng chọn nhận xét sẽ bị xóa');
                     return;
                 }
                 setState((data) => ({
@@ -155,7 +155,7 @@ export default function Comments() {
             onConfirm={() => batchDeleteComment()}
         >
             <Button danger={true} icon={<DeleteFilled />}>
-                批量删除
+                Xóa hàng loạt
             </Button>
         </Popconfirm>
     );
@@ -170,7 +170,7 @@ export default function Comments() {
                     dataSource={state.comments}
                     onChange={(pagination) => handleTableChange(pagination)}
                     pagination={{
-                        showTotal: (total) => `共 ${total} 条评论数据`,
+                        showTotal: (total) => `Phổ thông ${total} xem xét dữ liệu`,
                     }}
                     expandedRowRender={(record) => {
                         return (
@@ -179,7 +179,7 @@ export default function Comments() {
                                     <div>
                                         <div className={style.tip}>
                                             <BranchesOutlined />
-                                            引用：
+                                            Trích dẫn:
                                         </div>
                                         <div className={style.replyListItem}>
                                             <div className={style.userAvatar}>
@@ -190,7 +190,7 @@ export default function Comments() {
                                                     <div className={style.baseInfo}>
                                                         <div className="reply-author">{record.reply.nickName}</div>
                                                         <a className="reply-time">
-                                                            在 {timeAgo(record.reply.createdAt)} 评论
+                                                            Hiện hữu {timeAgo(record.reply.createdAt)} Bình luận
                                                         </a>
                                                     </div>
                                                     <div className={style.userAction}>
@@ -203,7 +203,7 @@ export default function Comments() {
                                                                 );
                                                             }}
                                                         >
-                                                            回复
+                                                            Phản hồi
                                                         </Button>
                                                     </div>
                                                 </div>
@@ -220,7 +220,7 @@ export default function Comments() {
                                 <div style={{ padding: '0 20px' }}>
                                     <div className={style.tip}>
                                         <CommentOutlined />
-                                        评论内容：
+                                        Bình luận:
                                     </div>
                                     <div
                                         className="markdown-body"

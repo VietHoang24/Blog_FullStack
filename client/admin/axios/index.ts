@@ -17,12 +17,12 @@ const errorHandler = (error) => {
     const { status } = response;
     switch (status) {
         case 401:
-          // Trả về 401 để xóa thông tin mã thông báo và nhảy vào trang đăng nhập
+            // Trả về 401 để xóa thông tin mã thông báo và nhảy vào trang đăng nhập
             localStorage.removeItem(config.tokenKey);
             // Router.push('/admin/login');
             return Promise.reject(error);
         case 403:
-         // Trả về 401 để xóa thông tin mã thông báo và nhảy vào trang đăng nhập
+            // Trả về 401 để xóa thông tin mã thông báo và nhảy vào trang đăng nhập
             localStorage.removeItem(config.tokenKey);
             Router.push('/admin/login');
             return Promise.reject(error);

@@ -44,12 +44,12 @@ const Item = (props: any) => {
                     </a>
                 </Link>
                 <div className={style.itemMeta}>
-                    <span className="cat">发布于 {parseTime(item.createdAt)}</span>
+                    <span className="cat">Đăng:  {parseTime(item.createdAt)}</span>
                     <em>·</em>
                     <span className="cat">{(item.category && item.category.name) || '暂无分类'}</span> <em>·</em>
-                    <span>阅读：{item.viewsCount}</span>
+                    <span>Lượt xem: {item.viewsCount}</span>
                     <em>·</em>
-                    <span>评论：{item.commentCount}</span>
+                    <span>Bình luận: {item.commentCount}</span>
                 </div>
                 <p className={style.itemSummary}>{item.summary}</p>
                 {item.tags.length > 0 && (

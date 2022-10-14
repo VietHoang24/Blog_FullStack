@@ -18,7 +18,7 @@ export default function RecentCommentList(props: Props) {
         <Card
             className={style.recentCommentListCard}
             style={{ marginBottom: 24 }}
-            title="近期评论"
+            title="Những ý kiến ​​gần đây"
             bordered={false}
             bodyStyle={{ padding: 0 }}
             loading={loading}
@@ -31,7 +31,7 @@ export default function RecentCommentList(props: Props) {
                                 <div className={style.nickName}>
                                     <strong>{item.nickName}</strong>
                                 </div>
-                                &nbsp;在&nbsp;
+                                &nbsp;hiện hữu&nbsp;
                                 <a
                                     className={style.commentContentTitleA}
                                     href={`/blog/articles/${item.article && item.article._id}`}
@@ -42,10 +42,10 @@ export default function RecentCommentList(props: Props) {
                                 </a>
                                 {item.reply ? (
                                     <div className={style.nickName}>
-                                        &nbsp;回复&nbsp;<strong>{item.reply.nickName}</strong>&nbsp;
+                                        &nbsp;Phản hồi&nbsp;<strong>{item.reply.nickName}</strong>&nbsp;
                                     </div>
                                 ) : (
-                                    <span>&nbsp;说：&nbsp;</span>
+                                    <span>&nbsp;Trả lời:&nbsp;</span>
                                 )}
                             </span>
                             <span className={style.timestampSpan}>

@@ -5,7 +5,7 @@ import style from './style.module.scss';
 import BackTopBtn from '../back-top-button';
 import BlogRuningTime from '../blog-runing-time';
 import { ReactSVG } from 'react-svg';
-import { EmailIcon, WechatIcon, QQIcon, GithubIcon } from '../../icons';
+import { EmailIcon, WechatIcon, QQIcon, GithubIcon, FacebookIcon } from '../../icons';
 import icpPng from '@blog/client/assets/images/icp.png';
 import { useFetchConfigQuery } from '../../api';
 
@@ -18,39 +18,37 @@ export const AppFooter = () => {
                 <div className={style.siteInfo}>
                     <div className={style.svgWrap}>
                         <ReactSVG src={config.siteLogo} />
-                        <p className={style.siteTitle}>欢迎来到 {config.siteTitle} 😀</p>
+                        <p className={style.siteTitle}>Chào mừng bạn đến {config.siteTitle} 😀</p>
                     </div>
-                    <p className={style.siteTitle}>这里主要分享前后端技术文章，致力于web技术研究。</p>
+                    <p className={style.siteTitle}>Ở đây chúng tôi chủ yếu chia sẻ các bài báo công nghệ mặt trận, dành riêng cho nghiên cứu công nghệ web.</p>
                 </div>
                 <div className={style.contact}>
-                    <div className={style.contactTitle}>Contact us: </div>
+                    <div className={style.contactTitle}>Liên hệ với tôi: </div>
                     <div className={style.contactList}>
-                        <a href="mailto:bs32g1038@163.com">
+                        <a href="mailto:viethoangquoc2312@gmail.com"  target="_blank">
                             <EmailIcon></EmailIcon>
                         </a>
-                        <a>
-                            <WechatIcon></WechatIcon>
+                        <a href='https://www.facebook.com/Viethaui/' target="_blank">
+                            <FacebookIcon></FacebookIcon>
                         </a>
-                        <a>
-                            <QQIcon></QQIcon>
-                        </a>
-                        <a href={config.projectGithub}>
+                        <a href={config.projectGithub||"https://github.com/VietHoang24"}  target="_blank">
                             <GithubIcon></GithubIcon>
                         </a>
                     </div>
                 </div>
                 <div className={style.statement}>
-                    <BlogRuningTime></BlogRuningTime>&nbsp;&nbsp;版权 © 2016-{new Date().getFullYear()}{' '}
+                    {/* <BlogRuningTime></BlogRuningTime> */}
+                    Bản quyền © 2021-{new Date().getFullYear()}{' '}
                     {config.siteTitle}
-                    <a href={config.icpGovCn}>
+                    {/* <a href={config.icpGovCn}>
                         <img src={icpPng.src} alt={icpPng.src} />
                         <span>{config.siteIcp}</span>
-                    </a>
+                    </a> */}
                 </div>
             </section>
-            <section className={style.support}>
-                <h3>商务合作</h3>
-                <p>承包前后端业务，联系前，请明确你的需求，最低报价，工期。</p>
+            {/* <section className={style.support}>
+                <h3>Hợp tác kinh doanh</h3>
+                <p>Hợp đồng Front -end Business, trước khi liên hệ, xin vui lòng làm rõ nhu cầu của bạn, báo giá tối thiểu, thời gian xây dựng.</p>
                 <div className={style.supportList}>
                     <a href="https://nestjs.com">
                         <img src={require('@blog/client/assets/svgs/logo-nestjs.svg')} />
@@ -65,7 +63,7 @@ export const AppFooter = () => {
                         <img src={require('@blog/client/assets/svgs/logo-ant-design.svg')} />
                     </a>
                 </div>
-            </section>
+            </section> */}
         </footer>
     );
 };

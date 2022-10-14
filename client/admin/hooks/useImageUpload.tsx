@@ -98,7 +98,7 @@ const Index = (props: Props) => {
                 ) : (
                     <div>
                         {isUploading ? <LoadingOutlined /> : <PlusOutlined />}
-                        <div className="ant-upload-text">上传</div>
+                        <div className="ant-upload-text">Tải lên</div>
                     </div>
                 )}
             </Upload>

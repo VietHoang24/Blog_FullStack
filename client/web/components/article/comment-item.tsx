@@ -24,7 +24,7 @@ const handleEmoji = (text) => {
 };
 
 const getBadgeVisitorOrAuthor = (identity) => {
-    return identity !== 0 ? <span>博主</span> : <span>游客</span>;
+    return identity !== 0 ? <span>Blogger</span> : <span>Khách</span>;
 };
 
 const ReplyComponent = (props: { parentId: string; item: IComment }) => {
@@ -62,7 +62,7 @@ const ReplyComponent = (props: { parentId: string; item: IComment }) => {
                             style={{ color: 'var(--secondary-text-color)' }}
                             onClick={() => setShowCommentForm(showCommentForm ? '' : item._id)}
                         >
-                            回复
+                            Phản hồi
                         </a>
                     </Space>
                 </div>
@@ -110,7 +110,7 @@ export const CommentItem = (props: { item: IComment; index: number }) => {
                                 style={{ color: 'var(--secondary-text-color)' }}
                                 onClick={() => setShowCommentForm(showCommentForm ? '' : item._id)}
                             >
-                                回复
+                               Phản hồi
                             </a>
                         </Space>
                     </div>

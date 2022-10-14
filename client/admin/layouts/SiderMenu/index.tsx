@@ -167,12 +167,12 @@ export default function SiderMenu(props: Props) {
                         <Link href="/admin/site">
                             <a>
                                 <Button>
-                                    <HomeOutlined></HomeOutlined>浏览网站
+                                    <HomeOutlined></HomeOutlined>Xem trang web
                                 </Button>
                             </a>
                         </Link>
                     </div>
-                    <div className={style.menuTip}>管理</div>
+                    <div className={style.menuTip}>Quản lý</div>
                     <MenuList
                         theme="light"
                         mode={collapsed ? 'vertical' : 'inline'}

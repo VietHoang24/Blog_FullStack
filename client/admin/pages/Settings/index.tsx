@@ -69,7 +69,7 @@ export default function Settings() {
                 ></EditableInput>
                 <EditableInput
                     value={data.siteIcp}
-                    label="网站备案icp"
+                    label="Nộp trang web ICP"
                     name="siteIcp"
                     placeholder="请输入备案icp"
                     loading={loading}

@@ -13,7 +13,7 @@ const Page = () => {
     return (
         <AppLayout>
             <Head>
-                <title>{config.siteTitle + '-发现'}</title>
+                <title>{config.siteTitle + '-Tìm thấy'}</title>
             </Head>
             <div style={{ margin: '20px 30px' }}>
                 {exploreList.map((item) => {

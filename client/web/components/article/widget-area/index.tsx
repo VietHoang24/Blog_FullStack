@@ -44,18 +44,18 @@ export default function Index(props: { recentArticles: ItemProps[] }) {
     }
     return (
         <section className={style.widgetArea}>
-            <h3 className={style.widgetAreaTitle}>最近文章</h3>
+            <h3 className={style.widgetAreaTitle}>Bài viết gần đây</h3>
             <div>
                 {arr.map((item) => {
                     return <Item item={item} key={item._id}></Item>;
                 })}
-                <a
+                {/* <a
                     href="https://www.vultr.com/?ref=7866918-4F"
                     className="vultr"
                     style={{ display: 'block', border: '1px solid var(--border-color)' }}
                 >
                     <Image src={vultrPng.src} width="300px" height="250px" alt="" />
-                </a>
+                </a> */}
             </div>
         </section>
     );

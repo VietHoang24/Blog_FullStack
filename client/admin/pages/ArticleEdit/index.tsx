@@ -106,7 +106,7 @@ export default function Index() {
             }}
             onFormFinish={(name, { values, forms }) => {
                 if (name === 'contentForm') {
-                    console.log('values là: ',values)
+                    console.log('values là: ', values);
                     setShowDrawer(true);
                 } else {
                     const { contentForm } = forms;
@@ -121,20 +121,20 @@ export default function Index() {
                         <Link href="/admin/content/articles" passHref={true}>
                             <a>
                                 <ArrowLeftOutlined></ArrowLeftOutlined>
-                                文章列表
+                                Danh sách bài viết
                             </a>
                         </Link>
                     </div>
-                    <div className={style.type}>{id ? '文章编辑' : '添加文章'}</div>
+                    <div className={style.type}>{id ? 'Biên tập bài viết' : 'Thêm một bài viết'}</div>
                 </div>
                 <div className={style.editorWrap}>
                     <Form form={form} initialValues={{ content: '' }} name="contentForm">
                         <Form.Item
                             name="title"
                             style={{ maxWidth: '700px', width: '100%', margin: '0 auto' }}
-                            rules={[{ required: true, message: '标题不能为空！，且最多80个字符!', max: 80 }]}
+                            rules={[{ required: true, message: 'Tiêu đề không thể trống! Và nhiều nhất 160 ký tự!', max: 160 }]}
                         >
-                            <TextArea placeholder="请输入标题" rows={1} style={{ textAlign: 'center' }} />
+                            <TextArea placeholder="Vui lòng nhập tiêu đề" rows={1} style={{ textAlign: 'center' }} />
                         </Form.Item>
                     </Form>
                 </div>

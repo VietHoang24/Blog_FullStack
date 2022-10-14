@@ -33,7 +33,7 @@ export default function Index() {
     };
     const deleteCategory = (_id) => {
         axios.delete('/categories/' + _id).then((res) => {
-            message.success(`删除分类 ${res.data.name} 成功！`);
+            message.success(`Xóa phân loại ${res.data.name} thành công!`);
             fetchData();
         });
     };
@@ -44,14 +44,14 @@ export default function Index() {
             })
             .then((res) => {
                 if (res && res.data && res.data.deletedCount > 0) {
-                    message.success(`删除分类成功！`);
+                    message.success(`Xóa phân loại thành công!`);
                     setState((data) => ({
                         ...data,
                         selectedRowKeys: [],
                     }));
                     return fetchData();
                 }
-                return message.error('删除分类失败，请重新尝试。');
+                return message.error('Xóa lỗi phân loại, vui lòng thử lại.');
             });
     };
     const onSelectChange = (selectedRowKeys) => {
@@ -63,20 +63,20 @@ export default function Index() {
     const getTableColums = () => {
         return [
             {
-                title: '名称',
+                title: 'Tên',
                 dataIndex: 'name',
             },
             {
-                title: '创建时间',
+                title: 'Thời điểm tạo',
                 dataIndex: 'createdAt',
                 render: (text, record) => parseTime(record.createdAt),
             },
             {
-                title: '文章数量',
+                title: 'Số lượng bài viết',
                 dataIndex: 'articleCount',
             },
             {
-                title: '操作',
+                title: 'vận hành',
                 key: 'operation',
                 width: 180,
                 render: (text, record) => (
@@ -84,16 +84,16 @@ export default function Index() {
                         <Button
                             type="primary"
                             size="small"
-                            title="编辑"
+                            title="chỉnh sửa"
                             icon={<EditFilled />}
                             onClick={() => Router.push('/admin/content/categories/edit/' + record._id)}
                         >
-                            编辑
+                            Chỉnh sửa
                         </Button>
-                        ,
-                        <Popconfirm title="确认要删除？" onConfirm={() => deleteCategory(record._id)}>
-                            <Button danger={true} size="small" title="删除" icon={<DeleteFilled />}>
-                                删除
+                        
+                        <Popconfirm title="Xác nhận rằng bạn muốn xóa?" onConfirm={() => deleteCategory(record._id)}>
+                            <Button danger={true} size="small" title="Xóa" icon={<DeleteFilled />}>
+                                Xóa
                             </Button>
                         </Popconfirm>
                     </div>
@@ -117,16 +117,16 @@ export default function Index() {
                 icon={<PlusOutlined />}
                 onClick={() => Router.push('/admin/content/categories/edit')}
             >
-                添加分类
+                Thêm danh mục
             </Button>
             <Popconfirm
-                title="确认要删除？"
+                title="Xác nhận rằng bạn muốn xóa?"
                 placement="right"
                 visible={state.visible}
                 onConfirm={() => batchDeleteCategory()}
                 onVisibleChange={() => {
                     if (state.selectedRowKeys.length <= 0) {
-                        message.info('请选择要删除的分类');
+                        message.info('Vui lòng chọn phân loại để xóa');
                         return;
                     }
                     setState((data) => ({
@@ -136,7 +136,7 @@ export default function Index() {
                 }}
             >
                 <Button danger={true} icon={<DeleteFilled />}>
-                    批量删除
+                    Xóa hàng loạt
                 </Button>
             </Popconfirm>
         </Space>

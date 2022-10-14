@@ -48,13 +48,16 @@ export default function Index({ visible, onCancel, formData }) {
             <Option key={category._id} value={category._id}>
                 {category.name}
             </Option>
-         
         ));
-    categoryOptions.push(<Option key={"đay la key"} value="Truyện cười">Haha</Option>)
+    categoryOptions.push(
+        <Option key={'đay la key'} value="Truyện cười">
+            Haha
+        </Option>
+    );
     return (
         <Drawer
             width="340px"
-            title="文章配置"
+            title="Cấu hình bài viết"
             placement="right"
             onClose={() => {
                 if (onCancel) {
@@ -67,35 +70,35 @@ export default function Index({ visible, onCancel, formData }) {
                 <Form layout="vertical" form={form} name="articleConfigForm" initialValues={formData}>
                     <Form.Item
                         required={true}
-                        label="封面图片"
+                        label="Ảnh bìa"
                         name="screenshot"
                         valuePropName="fileList"
                         getValueFromEvent={handleUpload}
-                        rules={[{ required: false, message: '封面图片不能为空!' }]}
+                        rules={[{ required: false, message: 'Ảnh bìa không thể trống!' }]}
                     >
                         <ImageCropper aspectRatio={3 / 2} minWidth={300} maxWidth={300} minHeight={200} maxHeight={200}>
                             <UploadButton></UploadButton>
                         </ImageCropper>
                     </Form.Item>
-                    <Form.Item name="category" label="文章分类" rules={[{ required: false, message: '分类不能为空!' }]}>
-                        <Select placeholder="请选择一个分类">{categoryOptions}</Select>
+                    <Form.Item name="category" label="Phân loại bài viết" rules={[{ required: false, message: 'Phân loại không thể trống!' }]}>
+                        <Select placeholder="Hãy chọn một danh mục">{categoryOptions}</Select>
                     </Form.Item>
-                    <Form.Item name="tags" label="文章标签">
+                    <Form.Item name="tags" label="Nhãn">
                         <EditableTagGroup />
                     </Form.Item>
                     <Form.Item
                         name="summary"
-                        label="文章摘要"
-                        rules={[{ required: true, message: '文章摘要不能为空，且最多800个字符!', max: 800 }]}
+                        label="Tóm tắt"
+                        rules={[{ required: true, message: 'Tóm tắt bài viết không thể trống và tối đa 800 ký tự!', max: 800 }]}
                     >
-                        <TextArea placeholder="请输入文章摘要" rows={4}></TextArea>
+                        <TextArea placeholder="Vui lòng nhập tóm tắt bài viết" rows={4}></TextArea>
                     </Form.Item>
                     <Form.Item>
                         <Button htmlType="submit" type="link">
-                            <SendOutlined />发 布
+                            <SendOutlined />Gửi
                         </Button>
                         <Button type="link" danger>
-                            <DeleteFilled />删 除
+                            <DeleteFilled />Hủy
                         </Button>
                     </Form.Item>
                 </Form>

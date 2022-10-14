@@ -19,7 +19,7 @@ const loadTimeCountEvent = () => {
         const minsold = Math.floor(60 * (eHrsold - hrsold));
         const seconds = Math.floor(60 * (eMinsold - minsold));
         if (time) {
-            time.innerHTML = daysold + '天' + hrsold + '小时' + minsold + '分' + seconds + '秒';
+            time.innerHTML = daysold + ' Ngày ' + hrsold + ' Giờ ' + minsold + ' hút ' + seconds + ' Thứ hai ';
         }
     }
     setInterval(showRunTime, 1000);

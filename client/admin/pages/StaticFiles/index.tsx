@@ -24,7 +24,7 @@ export default function StaticFiles() {
         pagination: {
             current: 1,
             total: 0,
-            showTotal: (total) => `共 ${total} 条数据`,
+            showTotal: (total) => `Phổ thông ${total} dữ liệu bài viết`,
         },
         selectedRowKeys: [],
         loading: false,
@@ -55,7 +55,7 @@ export default function StaticFiles() {
     );
     const deleteFile = (_id) => {
         axios.delete('/files/' + _id).then(() => {
-            message.success('删除文件成功');
+            message.success('Xóa tệp thành công');
             fetchData();
         });
     };
@@ -66,14 +66,14 @@ export default function StaticFiles() {
             })
             .then((res) => {
                 if (res && res.data && res.data.deletedCount > 0) {
-                    message.success('删除文件成功！');
+                    message.success('Xóa tệp thành công!');
                     setState((data) => ({
                         ...data,
                         selectedRowKeys: [],
                     }));
                     return fetchData();
                 }
-                return message.error('删除文件失败，请重新尝试。');
+                return message.error('Xóa tệp không thành công, vui lòng thử lại.');
             });
     };
     const handleOk = () => {
@@ -102,7 +102,7 @@ export default function StaticFiles() {
     const getTableColums = () => {
         return [
             {
-                title: '文件名',
+                title: 'Tên tập tin',
                 dataIndex: 'name',
                 render: (text, record) => {
                     if (record.type === 'image') {
@@ -130,11 +130,11 @@ export default function StaticFiles() {
                 },
             },
             {
-                title: '类型',
+                title: 'Loại',
                 dataIndex: 'type',
             },
             {
-                title: '大小',
+                title: 'Kích thước',
                 dataIndex: 'size',
                 width: 100,
                 render: (text, record) => {
@@ -142,13 +142,13 @@ export default function StaticFiles() {
                 },
             },
             {
-                title: '创建时间',
+                title: 'Thời điểm tạo',
                 dataIndex: 'createdAt',
                 width: 160,
                 render: (text, record) => parseTime(record.createdAt, 'YYYY-MM-DD hh:mm'),
             },
             {
-                title: '操作',
+                title: 'Vận hành',
                 key: 'operation',
                 width: 190,
                 render: (text, record) => (
@@ -162,12 +162,12 @@ export default function StaticFiles() {
                                 style={{ marginRight: '5px' }}
                                 icon={<CopyFilled />}
                             >
-                                复制url
+                               Sao chép URL
                             </Button>
                         )}
                         <Popconfirm title="确认要删除？" onConfirm={() => deleteFile(record._id)}>
                             <Button size="small" title="删除" icon={<DeleteFilled />} danger>
-                                删除
+                                Xóa
                             </Button>
                         </Popconfirm>
                     </div>
@@ -183,7 +183,7 @@ export default function StaticFiles() {
                 clipboard: c,
             }));
             c.on('success', function () {
-                message.success('复制链接成功');
+                message.success('Sao chép thành công liên kết');
             });
             fetchData();
         }
@@ -232,16 +232,16 @@ export default function StaticFiles() {
                             }))
                         }
                     >
-                        上传
+                        Tải lên
                     </Button>
                     <Popconfirm
-                        title="确认要删除？"
+                        title="Xác nhận rằng bạn muốn xóa?"
                         placement="right"
                         visible={state.delConfirmVisible}
                         onConfirm={() => batchDeleteFile()}
                         onVisibleChange={() => {
                             if (state.selectedRowKeys.length <= 0) {
-                                message.info('请选择要删除的文件');
+                                message.info('Vui lòng chọn tệp sẽ bị xóa');
                                 return;
                             }
                             setState((data) => ({
@@ -251,12 +251,12 @@ export default function StaticFiles() {
                         }}
                     >
                         <Button danger={true} icon={<DeleteFilled />}>
-                            批量删除
+                            Xóa hàng loạt
                         </Button>
                     </Popconfirm>
                 </div>
                 <Modal
-                    title="上传文件"
+                    title="Tải lên tệp"
                     visible={state.visible}
                     onOk={() => handleOk()}
                     onCancel={() =>

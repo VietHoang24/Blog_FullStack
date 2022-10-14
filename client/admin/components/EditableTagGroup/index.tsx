@@ -118,7 +118,7 @@ export default class EditableTagGroup extends React.Component<any, any> {
                 )}
                 {!inputVisible && (
                     <Tag onClick={this.showInput} style={{ background: '#fff', borderStyle: 'dashed' }}>
-                        <PlusOutlined /> 新建标签
+                        <PlusOutlined /> Tag
                     </Tag>
                 )}
             </div>

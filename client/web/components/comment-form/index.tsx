@@ -82,23 +82,25 @@ export const CommentForm = (props: Props) => {
     };
     return (
         <div>
-            <Alert
+            {/* <Alert
                 message={
                     <div>
-                        当前评论模式：游客模式，系统将自动生成相关数据信息。
+                        Chế độ nhận xét hiện tại: Chế độ du lịch, hệ thống sẽ tự động tạo thông tin dữ liệu liên quan.
                         <Tooltip
                             placement="topLeft"
-                            title="发布评论时，请遵守您所在国家和中华人民共和国的法律法规，禁止发布政治相关内容；评论内容应该和所在页面的内容相关，禁止一切无意义和严重跑题的内容；请尊重他人，友好评论，请像和他人面对面谈话时一样保持对他人的尊重；禁止发布商业广告。"
+                            title="Khi xuất bản bình luận, xin vui lòng tuân thủ luật pháp và
+                             quy định của đất nước bạn và luật pháp Việt Nam, và cấm phát hành nội dung liên quan đến chính trị; 
+                            nội dung của các bình luận nên liên quan đến nội dung của trang, cấm tất cả các nội dung Vô nghĩa và nghiêm túc chạy; xin vui lòng tôn trọng người khác và bình luận thân thiện. Xin hãy duy trì sự tôn trọng đối với người khác như thể nói chuyện với người khác đối mặt với -Face; cấm phát hành quảng cáo thương mại."
                         >
-                            <a>详情。</a>
+                            <a>Để biết chi tiết.</a>
                         </Tooltip>
                     </div>
                 }
                 type="warning"
                 showIcon
-            />
+            /> */}
             <div className={style.userInfo}>
-                <span className={style.userInfoText}>游客账户：</span>
+                <span className={style.userInfoText}>Tài khoản:</span>
                 <Avatar nickName={userInfo.nickName}></Avatar>
                 <span className={style.userInfoText}>{userInfo.nickName}</span>
             </div>
@@ -106,7 +108,7 @@ export const CommentForm = (props: Props) => {
                 {errorMessage && <Alert message={errorMessage} type="warning" showIcon />}
                 <Input.TextArea
                     value={content}
-                    placeholder="留点空白给你说~"
+                    placeholder="Để lại một số trống cho bạn~"
                     autoSize={{ minRows: 3, maxRows: 3 }}
                     onChange={(event) => {
                         setContent(event.target.value);
@@ -119,7 +121,7 @@ export const CommentForm = (props: Props) => {
                 ></Emoji>
                 <div className={style.commentFormFooter}>
                     <Button loading={buttonLoading} size="small" type="primary" onClick={() => submit()}>
-                        提 交
+                       Gửi đi
                     </Button>
                 </div>
             </div>

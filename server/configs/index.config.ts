@@ -34,7 +34,8 @@ export const RSS = {
     title: 'Salt Blog',
     link: 'http://www.lizc.net',
     language: 'zh-cn',
-    description: 'Trạm blog, tập trung vào phát triển web, đặc biệt là phát triển mặt trận.Tôi thích phát triển với những người trong Đạo!',
+    description:
+        'Trạm blog, tập trung vào phát triển web, đặc biệt là phát triển mặt trận.Tôi thích phát triển với những người trong Đạo!',
     maxRssItems: 50,
 };
 

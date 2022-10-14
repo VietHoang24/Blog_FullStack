@@ -26,7 +26,7 @@ export default function Index() {
         const { id } = router.query;
         const p = id ? updateCategory(id, data) : createCategory(data);
         p.then(() => {
-            message.success('提交成功');
+            message.success('Gửi thành công');
             Router.push('/admin/content/categories');
         });
     };
@@ -38,11 +38,11 @@ export default function Index() {
                         name="name"
                         labelCol={{ span: 3 }}
                         wrapperCol={{ span: 10 }}
-                        label="分类名称："
+                        label="Tên danh mục:"
                         rules={[
                             {
                                 required: true,
-                                message: '分类名称长度要在1-25个字符之间！',
+                                message: 'Độ dài của tên danh mục nằm trong khoảng 1-25 ký tự！',
                                 min: 1,
                                 max: 25,
                             },
@@ -50,9 +50,9 @@ export default function Index() {
                     >
                         <Input type="text" />
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="操作：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="Hành động:">
                         <Button type="primary" htmlType="submit">
-                            发布
+                            Thêm
                         </Button>
                     </Form.Item>
                 </Form>

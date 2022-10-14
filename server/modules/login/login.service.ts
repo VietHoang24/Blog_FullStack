@@ -24,7 +24,8 @@ export class LoginService {
         const count = await this.userModel.countDocuments({});
         if (count <= 0) {
             return {
-                message: 'Bạn là người đăng nhập đầu tiên và tài khoản này sẽ là tài khoản quản trị viên của bạn, xin nhớ!Đăng nhập trực tiếp để tạo tài khoản!',
+                message:
+                    'Bạn là người đăng nhập đầu tiên và tài khoản này sẽ là tài khoản quản trị viên của bạn, xin nhớ!Đăng nhập trực tiếp để tạo tài khoản!',
             };
         }
         return '';
@@ -37,7 +38,7 @@ export class LoginService {
         const password = U.password;
         const count = await this.userModel.countDocuments({});
         // const result = Joi.object(UserJoiSchema).validate(U);
-        console.log(U)
+        console.log(U);
         if (count <= 0) {
             /**
              * 首次登陆，即为管理员账号，仅一次。
@@ -84,6 +85,8 @@ export class LoginService {
                 }),
             };
         }
-        throw new BadRequestException('Tên người dùng hoặc đầu vào mật khẩu đã sai, vui lòng kiểm tra lại trước khi đăng nhập');
+        throw new BadRequestException(
+            'Tên người dùng hoặc đầu vào mật khẩu đã sai, vui lòng kiểm tra lại trước khi đăng nhập'
+        );
     }
 }

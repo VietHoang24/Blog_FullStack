@@ -17,17 +17,17 @@ const AboutPage = () => {
     });
     return (
         <div className={style.about}>
-            <PersonCommit values={values} totalCountInYear={totalCountInYear}></PersonCommit>
+            {/* <PersonCommit values={values} totalCountInYear={totalCountInYear}></PersonCommit> */}
             <div className={style.invite}>
-                <h3 className={style.inviteTitle}>
+                {/* <h3 className={style.inviteTitle}>
                     当前博客由vultr提供云服务器支持，点击下方链接购买服务器有优惠，博主也会从中受益，谢谢支持。
-                </h3>
-                <a
+                </h3> */}
+                {/* <a
                     href="https://www.vultr.com/?ref=7007600"
                     style={{ position: 'relative', display: 'block', height: 90, width: 728, margin: '0 auto' }}
                 >
                     <Image src={vultrPng.src} width={728} height={90} quality={100} alt="" />
-                </a>
+                </a> */}
             </div>
         </div>
     );

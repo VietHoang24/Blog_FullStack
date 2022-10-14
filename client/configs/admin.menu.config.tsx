@@ -13,22 +13,22 @@ import {
 const menuConfig = [
     {
         path: '/admin/dashboard',
-        title: '仪表盘',
+        title: 'Dashboard',
         icon: <DashboardOutlined />,
     },
 
     {
         path: '/admin/content/articles',
-        title: '文章管理',
+        title: 'Quản lý bài viết',
         icon: <FormOutlined />,
         childMenus: [
             {
-                title: '添加文章',
+                title: 'Thêm bài viết',
                 path: '/admin/content/articles/edit',
                 exact: true,
             },
             {
-                title: '编辑文章',
+                title: 'Chỉnh sửa bài viết',
                 path: '/admin/content/articles/edit/:id',
                 exact: true,
             },
@@ -36,16 +36,16 @@ const menuConfig = [
     },
     {
         path: '/admin/content/categories',
-        title: '分类管理',
+        title: 'Quản lý danh mục',
         icon: <AppstoreOutlined />,
         childMenus: [
             {
-                title: '添加分类',
+                title: 'Thêm doanh mục',
                 path: '/admin/content/categories/edit',
                 exact: true,
             },
             {
-                title: '编辑分类',
+                title: 'Chỉnh sửa danh mục',
                 path: '/admin/content/categories/edit/:id',
                 exact: true,
             },
@@ -53,11 +53,11 @@ const menuConfig = [
     },
     {
         path: '/admin/content/comments',
-        title: '评论管理',
+        title: 'Quản lý bình luận',
         icon: <CommentOutlined />,
         childMenus: [
             {
-                title: '回复评论',
+                title: 'Trả lời bình luận',
                 path: '/admin/content/comments/reply/:id',
                 exact: true,
             },
@@ -65,13 +65,13 @@ const menuConfig = [
     },
     {
         path: '/admin/explore',
-        title: '发现管理',
+        title: 'Khám phá quản lý',
         icon: <ShareAltOutlined />,
         exact: true,
     },
     {
         path: '/admin/code/static-files',
-        title: '静态文件',
+        title: 'Quản lỳ files',
         icon: <FileOutlined />,
         exact: true,
     },
@@ -82,14 +82,14 @@ const menuConfig = [
     {
         path: '/admin/user/person',
         icon: <UserOutlined />,
-        title: '用户信息',
+        title: 'Thông tin người dùng',
         hidden: true,
         exact: true,
     },
     {
         path: '/admin/settings',
         icon: <SettingOutlined />,
-        title: '系统配置',
+        title: 'Cấu hình hệ thông',
         exact: true,
     },
 ];

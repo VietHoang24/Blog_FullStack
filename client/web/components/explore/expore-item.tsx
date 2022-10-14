@@ -15,7 +15,7 @@ export const ExploreItem = (props) => {
             >
                 <Space size={8} style={{ width: '100%' }} direction="vertical">
                     <div className={style.itemMeta} style={{ marginBottom: 0 }}>
-                        <span className="cat">发布于 {parseTime(item.createdAt)}</span>
+                        <span className="cat">Đăng vào {parseTime(item.createdAt)}</span>
                     </div>
                     <div>{item.content}</div>
                     <div>

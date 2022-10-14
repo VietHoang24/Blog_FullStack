@@ -11,12 +11,13 @@ export type SmptConfigType = typeof smptConfig;
 
 const config = {
     siteTitle: 'Salt Blog ',
-    siteMetaKeyWords: 'Trang web cá nhân của Li Zhicheng, blog của Li Zhicheng, phát triển web, NodeJS Full Stack, Front -end Engineer, Back -end Development, Docker Container, Daily Life',
+    siteMetaKeyWords:
+        'Trang web cá nhân của Việt Salt, blog của Việt Salt, phát triển web, NodeJS Full Stack, Front -end Engineer, Back -end Development, Docker Container, Daily Life',
     siteMetaDescription:
-        'Trang web cá nhân của Li Zhicheng tập trung vào phát triển web, đặc biệt là phát triển mặt trận.Tôi thích làm công nghệ và thích chia sẻ công nghệ.Trang web này chủ yếu để chia sẻ nội dung của các bài viết liên quan đến Web, cũng như các bản ghi liên quan đến công việc cá nhân!',
+        'Trang web cá nhân của Việt Salt tập trung vào phát triển web, đặc biệt là phát triển front-end.Tôi thích làm công nghệ và thích chia sẻ công nghệ.Trang web này chủ yếu để chia sẻ nội dung của các bài viết liên quan đến Web, cũng như các bản ghi liên quan đến công việc cá nhân!',
     siteLogo: '/static/logo.svg',
 
-    siteIcp: 'Quảng Đông ICP số 16021965 -3',
+    siteIcp: 'Hà Nội Việt Nam',
     icpGovCn: 'http://www.beian.miit.gov.cn',
 
     github: 'https://github.com/bs32g1038',

@@ -11,6 +11,6 @@ export const timeAgo = (timestamp: string) => {
     return dayjs(timestamp).fromNow();
 };
 
-export const parseTime = (timestamp: string, format = 'YYYY-MM-DD HH:mm') => {
+export const parseTime = (timestamp: string, format = 'HH:mm DD-MM-YYYY ') => {
     return dayjs(timestamp).format(format);
 };
