@@ -21,7 +21,7 @@ const Page = () => {
     return (
         <AppLayout>
             <Head>
-                <title>{config.siteTitle }</title>
+                <title>{config.siteTitle}</title>
                 <link rel="shortcut icon" href="./assets/images/blogLogo.png "></link>
             </Head>
             <Categories></Categories>

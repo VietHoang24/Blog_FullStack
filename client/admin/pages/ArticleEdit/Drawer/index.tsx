@@ -80,7 +80,11 @@ export default function Index({ visible, onCancel, formData }) {
                             <UploadButton></UploadButton>
                         </ImageCropper>
                     </Form.Item>
-                    <Form.Item name="category" label="Phân loại bài viết" rules={[{ required: false, message: 'Phân loại không thể trống!' }]}>
+                    <Form.Item
+                        name="category"
+                        label="Phân loại bài viết"
+                        rules={[{ required: false, message: 'Phân loại không thể trống!' }]}
+                    >
                         <Select placeholder="Hãy chọn một danh mục">{categoryOptions}</Select>
                     </Form.Item>
                     <Form.Item name="tags" label="Nhãn">
@@ -89,16 +93,24 @@ export default function Index({ visible, onCancel, formData }) {
                     <Form.Item
                         name="summary"
                         label="Tóm tắt"
-                        rules={[{ required: true, message: 'Tóm tắt bài viết không thể trống và tối đa 800 ký tự!', max: 800 }]}
+                        rules={[
+                            {
+                                required: true,
+                                message: 'Tóm tắt bài viết không thể trống và tối đa 800 ký tự!',
+                                max: 800,
+                            },
+                        ]}
                     >
                         <TextArea placeholder="Vui lòng nhập tóm tắt bài viết" rows={4}></TextArea>
                     </Form.Item>
                     <Form.Item>
                         <Button htmlType="submit" type="link">
-                            <SendOutlined />Gửi
+                            <SendOutlined />
+                            Gửi
                         </Button>
                         <Button type="link" danger>
-                            <DeleteFilled />Hủy
+                            <DeleteFilled />
+                            Hủy
                         </Button>
                     </Form.Item>
                 </Form>

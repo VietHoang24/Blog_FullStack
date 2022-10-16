@@ -20,26 +20,28 @@ export const AppFooter = () => {
                         <ReactSVG src={config.siteLogo} />
                         <p className={style.siteTitle}>Chào mừng bạn đến {config.siteTitle} 😀</p>
                     </div>
-                    <p className={style.siteTitle}>Ở đây chúng tôi chủ yếu chia sẻ các bài báo công nghệ mặt trận, dành riêng cho nghiên cứu công nghệ web.</p>
+                    <p className={style.siteTitle}>
+                        Ở đây chúng tôi chủ yếu chia sẻ các bài báo công nghệ mặt trận, dành riêng cho nghiên cứu công
+                        nghệ web.
+                    </p>
                 </div>
                 <div className={style.contact}>
                     <div className={style.contactTitle}>Liên hệ với tôi: </div>
                     <div className={style.contactList}>
-                        <a href="mailto:viethoangquoc2312@gmail.com"  target="_blank">
+                        <a href="mailto:viethoangquoc2312@gmail.com" target="_blank">
                             <EmailIcon></EmailIcon>
                         </a>
-                        <a href='https://www.facebook.com/Viethaui/' target="_blank">
+                        <a href="https://www.facebook.com/Viethaui/" target="_blank">
                             <FacebookIcon></FacebookIcon>
                         </a>
-                        <a href={config.projectGithub||"https://github.com/VietHoang24"}  target="_blank">
+                        <a href={config.projectGithub || 'https://github.com/VietHoang24'} target="_blank">
                             <GithubIcon></GithubIcon>
                         </a>
                     </div>
                 </div>
                 <div className={style.statement}>
                     {/* <BlogRuningTime></BlogRuningTime> */}
-                    Bản quyền © 2021-{new Date().getFullYear()}{' '}
-                    {config.siteTitle}
+                    Bản quyền © 2021-{new Date().getFullYear()} {config.siteTitle}
                     {/* <a href={config.icpGovCn}>
                         <img src={icpPng.src} alt={icpPng.src} />
                         <span>{config.siteIcp}</span>

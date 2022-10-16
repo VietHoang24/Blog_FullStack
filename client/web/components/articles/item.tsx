@@ -44,7 +44,7 @@ const Item = (props: any) => {
                     </a>
                 </Link>
                 <div className={style.itemMeta}>
-                    <span className="cat">Đăng:  {parseTime(item.createdAt)}</span>
+                    <span className="cat">Đăng: {parseTime(item.createdAt)}</span>
                     <em>·</em>
                     <span className="cat">{(item.category && item.category.name) || '暂无分类'}</span> <em>·</em>
                     <span>Lượt xem: {item.viewsCount}</span>

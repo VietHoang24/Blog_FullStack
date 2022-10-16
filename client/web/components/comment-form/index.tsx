@@ -121,7 +121,7 @@ export const CommentForm = (props: Props) => {
                 ></Emoji>
                 <div className={style.commentFormFooter}>
                     <Button loading={buttonLoading} size="small" type="primary" onClick={() => submit()}>
-                       Gửi đi
+                        Gửi đi
                     </Button>
                 </div>
             </div>

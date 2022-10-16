@@ -110,7 +110,7 @@ export const CommentItem = (props: { item: IComment; index: number }) => {
                                 style={{ color: 'var(--secondary-text-color)' }}
                                 onClick={() => setShowCommentForm(showCommentForm ? '' : item._id)}
                             >
-                               Phản hồi
+                                Phản hồi
                             </a>
                         </Space>
                     </div>

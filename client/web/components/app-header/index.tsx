@@ -52,7 +52,7 @@ export const AppHeader = () => {
                     </a>
                 </NavLink> */}
             </nav>
-            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
                 <SearchForm style={{ marginRight: '15px' }} />
                 {theme === 'light' ? (
                     <Button
@@ -81,7 +81,6 @@ export const AppHeader = () => {
                     </a>
                 </NavLink>
             </div>
-
         </header>
     );
 };

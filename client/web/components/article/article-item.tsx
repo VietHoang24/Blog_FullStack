@@ -34,25 +34,30 @@ export default function ArticleItem(props: Props) {
                         <h2 className={style.articleTitle}>{article.title}</h2>
                     </a>
                 </Link>
-               
             </div>
             <div className={style.articleContent}>
                 <MarkdownBody content={article.content} />
             </div>
-          
+
             <div className={style.statement}>
                 <div>
-                <div className={style.articleMetaInfo}>
-                    <span>Đăng lúc {parseTime(article.createdAt)}</span>
-                    <span>
-                        Danh mục <> </>
-                        <Link href={`/blog/articles?cid=${article.category && article.category._id}`} passHref={true}>
-                            <a>{article.category && article.category.name}</a>
-                        </Link>
-                    </span>
-                    <span>{article.commentCount}<> </> Bình luận</span>
-                    <span>Số lần đọc {article.viewsCount}</span>
-                </div>
+                    <div className={style.articleMetaInfo}>
+                        <span>Đăng lúc {parseTime(article.createdAt)}</span>
+                        <span>
+                            Danh mục <> </>
+                            <Link
+                                href={`/blog/articles?cid=${article.category && article.category._id}`}
+                                passHref={true}
+                            >
+                                <a>{article.category && article.category.name}</a>
+                            </Link>
+                        </span>
+                        <span>
+                            {article.commentCount}
+                            <> </> Bình luận
+                        </span>
+                        <span>Số lần đọc {article.viewsCount}</span>
+                    </div>
                     <strong>Liên kết trong bài viết này:</strong>
                     <ArticleAddress articleId={article._id}></ArticleAddress>
                 </div>

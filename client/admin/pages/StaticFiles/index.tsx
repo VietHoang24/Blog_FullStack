@@ -162,7 +162,7 @@ export default function StaticFiles() {
                                 style={{ marginRight: '5px' }}
                                 icon={<CopyFilled />}
                             >
-                               Sao chép URL
+                                Sao chép URL
                             </Button>
                         )}
                         <Popconfirm title="确认要删除？" onConfirm={() => deleteFile(record._id)}>
