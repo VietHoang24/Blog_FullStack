@@ -13,7 +13,7 @@ export default function NavPanel(props: Props) {
         <Card
             loading={loading}
             style={{ marginBottom: 24 }}
-            title="便捷导航"
+            title="Điều hướng thuận tiện"
             bordered={false}
             bodyStyle={{ padding: 0 }}
         >

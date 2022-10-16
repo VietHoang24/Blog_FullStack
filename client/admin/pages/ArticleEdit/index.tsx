@@ -70,7 +70,7 @@ export default function Index() {
         const { id } = router.query;
         const content = editor.getMarkdown();
         if (!isLength(content, { min: 1, max: 15000 })) {
-            return message.error('文章详情不能为空，且最多15000个字符!');
+            return message.error('Chi tiết bài viết không thể trống và tối đa 15.000 ký tự!');
         }
         Object.assign(data, {
             content,
@@ -78,7 +78,7 @@ export default function Index() {
         });
         const p = id ? updateArticle(id, data) : createArticle(data);
         p.then(() => {
-            message.success('提交成功 ！');
+            message.success('gửi thành công ！');
             Router.push('/admin/content/articles');
         });
     };
@@ -132,7 +132,13 @@ export default function Index() {
                         <Form.Item
                             name="title"
                             style={{ maxWidth: '700px', width: '100%', margin: '0 auto' }}
-                            rules={[{ required: true, message: 'Tiêu đề không thể trống! Và nhiều nhất 160 ký tự!', max: 160 }]}
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Tiêu đề không thể trống! Và nhiều nhất 160 ký tự!',
+                                    max: 160,
+                                },
+                            ]}
                         >
                             <TextArea placeholder="Vui lòng nhập tiêu đề" rows={1} style={{ textAlign: 'center' }} />
                         </Form.Item>

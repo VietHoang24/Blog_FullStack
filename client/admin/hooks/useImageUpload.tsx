@@ -7,11 +7,11 @@ import { isEqual } from 'lodash';
 function svgBeforeUpload(file) {
     const isSvg = file.type === 'image/svg+xml';
     if (!isSvg) {
-        message.error('只能上传svg文件!');
+        message.error('Chỉ có thể tải lên các tệp SVG!');
     }
     const isLt100K = file.size / 1024 < 100;
     if (!isLt100K) {
-        message.error('svg最大只能上传100K!');
+        message.error('SVG chỉ có thể tải lên 100k!');
     }
     return isSvg && isLt100K;
 }
@@ -23,11 +23,11 @@ function beforeUpload(file) {
         file.type === 'image/png' ||
         file.type === 'image/svg+xml';
     if (!isJpgOrPng) {
-        message.error('只能上传jpg或者png图片!');
+        message.error('Chỉ có thể tải lên hình ảnh JPG hoặc PNG!');
     }
     const isLt10M = file.size / 1024 / 1024 < 10;
     if (!isLt10M) {
-        message.error('图片最大只能上传10MB!');
+        message.error('Hình ảnh tối đa chỉ có thể tải lên 10MB!');
     }
     return isJpgOrPng && isLt10M;
 }

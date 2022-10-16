@@ -11,7 +11,7 @@ axios.defaults.baseURL = '/api';
 const errorHandler = (error) => {
     const { response = {}, code, message: msg } = error;
     if (code === 'ECONNABORTED' || msg.includes('timeout')) {
-        message.error('网络超时');
+        message.error('Hết thời gian kết nối');
         return Promise.reject(error);
     }
     const { status } = response;
@@ -19,7 +19,7 @@ const errorHandler = (error) => {
         case 401:
             // Trả về 401 để xóa thông tin mã thông báo và nhảy vào trang đăng nhập
             localStorage.removeItem(config.tokenKey);
-            // Router.push('/admin/login');
+            Router.push('/admin/login');
             return Promise.reject(error);
         case 403:
             // Trả về 401 để xóa thông tin mã thông báo và nhảy vào trang đăng nhập
@@ -41,7 +41,7 @@ axios.interceptors.request.use(
         const token = localStorage.getItem(tokenKey);
         if (!(c.url && (c.url.includes('getFirstLoginInfo') || c.url.includes('login')))) {
             if (!token) {
-                // Router.push('/admin/login');
+                Router.push('/admin/login');
             }
         }
         c.headers.authorization = token || '';

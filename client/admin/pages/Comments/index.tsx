@@ -85,12 +85,12 @@ export default function Comments() {
     const getTableColums = () => {
         return [
             {
-                title: 'Tên nick',
+                title: 'Tên ',
                 dataIndex: 'nickName',
                 width: 160,
             },
             {
-                title: 'email',
+                title: 'Email',
                 dataIndex: 'email',
                 width: 100,
             },
@@ -114,7 +114,7 @@ export default function Comments() {
                         <Button
                             type="primary"
                             size="small"
-                            title="编辑"
+                            title="chỉnh sửa"
                             icon={<EditFilled />}
                             onClick={() => Router.push('/admin/content/comments/reply/' + record._id)}
                         >
@@ -122,7 +122,7 @@ export default function Comments() {
                         </Button>
                         ,
                         <Popconfirm title="Xác nhận rằng bạn muốn xóa?" onConfirm={() => deleteComment(record._id)}>
-                            <Button danger={true} size="small" title="xóa bỏ" icon={<DeleteFilled />}>
+                            <Button danger={true} size="small" title="Xóa bỏ" icon={<DeleteFilled />}>
                                 Xóa
                             </Button>
                         </Popconfirm>

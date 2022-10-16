@@ -40,7 +40,7 @@ export default function Index() {
             Object.assign(data, { parentId: id });
         }
         axios.post('/admin/reply-comment/', data).then(() => {
-            message.success('提交成功');
+            message.success('gửi thành công');
             Router.push('/admin/content/comments');
         });
     };
@@ -52,42 +52,42 @@ export default function Index() {
                     <Form.Item name="article" style={{ display: 'none' }}>
                         <Input type="text" />
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="昵称：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="Tên:">
                         <span className="ant-form-text">{comment.nickName}</span>
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="email：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="Email：">
                         <span className="ant-form-text">{comment.email}</span>
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="创建时间：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="Thời điểm tạo:">
                         <span className="ant-form-text">{parseTime(comment.createdAt)}</span>
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="文章标题：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="Tiêu đề:">
                         <span className="ant-form-text">{comment.article && comment.article.title}</span>
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="内容：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="Nội dung:">
                         <span className="ant-form-text" dangerouslySetInnerHTML={{ __html: comment.content }}></span>
                     </Form.Item>
                     <Form.Item
                         name="content"
                         labelCol={{ span: 3 }}
                         wrapperCol={{ span: 10 }}
-                        label="回复内容："
+                        label="Nội dung trả lời:"
                         rules={[
                             {
                                 required: true,
-                                message: '回复内容不能为空！',
+                                message: 'Nội dung trả lời không thể trống!',
                                 min: 1,
                             },
                         ]}
                     >
                         <Input.TextArea
-                            placeholder="请输入回复内容"
+                            placeholder="Vui lòng nhập nội dung trả lời"
                             autoSize={{ minRows: 2, maxRows: 6 }}
                         ></Input.TextArea>
                     </Form.Item>
-                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="操作：">
+                    <Form.Item labelCol={{ span: 3 }} wrapperCol={{ span: 10 }} label="vận hành:">
                         <Button type="primary" htmlType="submit">
-                            提交
+                            Gửi
                         </Button>
                     </Form.Item>
                 </Form>

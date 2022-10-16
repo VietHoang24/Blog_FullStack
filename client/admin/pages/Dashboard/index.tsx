@@ -10,17 +10,17 @@ import BasicLayout from '@blog/client/admin/layouts';
 const links = [
     {
         icon: <EditFilled />,
-        title: '文章管理',
+        title: 'Quản lý bài viết',
         href: '/admin/content/articles',
     },
     {
         icon: <PlusOutlined />,
-        title: '添加文章',
+        title: 'Thêm một bài viết',
         href: '/admin/content/articles/edit',
     },
     {
         icon: <CommentOutlined />,
-        title: '评论管理',
+        title: 'Quản lý bình luận',
         href: '/admin/content/comments',
     },
 ];

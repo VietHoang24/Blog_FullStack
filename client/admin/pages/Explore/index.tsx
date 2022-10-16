@@ -87,22 +87,22 @@ const Index = () => {
                                     <Button
                                         key="edit"
                                         size="small"
-                                        title="编辑"
+                                        title="Chỉnh sửa"
                                         type="link"
                                         icon={<EditFilled />}
                                         onClick={() =>
                                             setState((val) => ({ ...val, isVisibleWriter: true, editId: item._id }))
                                         }
                                     >
-                                        编辑
+                                        Chỉnh sửa
                                     </Button>,
                                     <Popconfirm
                                         key="delete"
-                                        title="确认要删除？"
+                                        title="Xác nhận rằng bạn muốn xóa?"
                                         onConfirm={() => deleteExplore(item._id)}
                                     >
-                                        <Button danger type="link" size="small" title="删除" icon={<DeleteFilled />}>
-                                            删除
+                                        <Button danger type="link" size="small" title="Xóa" icon={<DeleteFilled />}>
+                                            Xóa
                                         </Button>
                                     </Popconfirm>,
                                 ]}

@@ -46,41 +46,45 @@ export default function EmailInput(props: Props) {
                     </Button>
                 )}
             </div>
-            <Form.Item label="邮箱smtp地址" name="smtpHost">
-                <Input size="large" placeholder="请输入邮箱smtp地址" disabled={disabled} />
+            <Form.Item label="Hộp thư địa chỉ SMTP" name="smtpHost">
+                <Input size="large" placeholder="Vui lòng nhập địa chỉ SMTP hộp thư" disabled={disabled} />
             </Form.Item>
-            <Form.Item label="邮箱地址" name="smtpAuthUser">
-                <Input size="large" placeholder="请输入邮箱地址" disabled={disabled} />
+            <Form.Item label="Địa chỉ email" name="smtpAuthUser">
+                <Input size="large" placeholder="Vui lòng nhập địa chỉ email" disabled={disabled} />
             </Form.Item>
-            <Form.Item label="邮箱授权密码" name="smtpAuthpass">
-                <Input.Password size="large" placeholder="请输入邮箱授权密码" disabled={disabled} />
+            <Form.Item label="Mật khẩu ủy quyền hộp thư" name="smtpAuthpass">
+                <Input.Password
+                    size="large"
+                    placeholder="Vui lòng nhập mật khẩu ủy quyền hộp thư"
+                    disabled={disabled}
+                />
             </Form.Item>
             <Form.Item
                 name="isEnableSmtp"
                 valuePropName="checked"
-                label="是否开启邮箱通知服务"
-                extra="勾选，系统将会在有新的评论时，给你发送通知邮件"
+                label="Có mở dịch vụ thông báo hộp thư không"
+                extra="Kiểm tra, hệ thống sẽ gửi cho bạn email thông báo khi có nhận xét mới"
             >
                 <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} disabled={disabled} />
             </Form.Item>
             {!disabled && (
                 <Form.Item>
                     <Button type="primary" htmlType="submit" loading={loading} style={{ marginRight: '10px' }}>
-                        <SendOutlined></SendOutlined>保存邮箱配置
+                        <SendOutlined></SendOutlined>Lưu cấu hình hộp thư
                     </Button>
                     <Button
                         loading={loading}
                         onClick={() => {
                             injectRequestLoading(testEmail()).then((res) => {
                                 if (res && res.data === true) {
-                                    return message.success('邮箱配置正常！');
+                                    return message.success('Cấu hình hộp thư là bình thường!');
                                 }
-                                message.error('邮箱配置错误！');
+                                message.error('Cấu hình email!');
                             });
                         }}
                     >
                         <SoundOutlined />
-                        测试发送邮件
+                        Kiểm tra gửi email
                     </Button>
                 </Form.Item>
             )}

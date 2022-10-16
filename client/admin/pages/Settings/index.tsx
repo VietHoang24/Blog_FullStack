@@ -28,7 +28,7 @@ export default function Settings() {
             });
         }
         injectRequestLoading(updateConfig(data)).then(() => {
-            message.success('更新成功');
+            message.success('Hoàn thành cập nhật');
         });
     };
 
@@ -40,20 +40,20 @@ export default function Settings() {
     return (
         <BasicLayout>
             <div className={style.wrap}>
-                <div className={style.tip}>网站基础信息</div>
+                <div className={style.tip}>Trang web thông tin cơ bản</div>
                 <EditableInput
                     value={data.siteTitle}
-                    label="网站标题"
+                    label="Trang Tiêu đề"
                     name="siteTitle"
-                    placeholder="请输入网站标题"
+                    placeholder="Vui lòng nhập tiêu đề trang web"
                     loading={loading}
                     onFinish={onFinish}
                 ></EditableInput>
                 <EditableInput
                     value={data.siteDomain}
-                    label="网站域名"
+                    label="Tên miền trang web"
                     name="siteDomain"
-                    placeholder="请输入网站域名"
+                    placeholder="Vui lòng nhập tên miền trang web"
                     loading={loading}
                     onFinish={onFinish}
                     rules={[
@@ -62,7 +62,9 @@ export default function Settings() {
                                 if (isFQDN(value)) {
                                     return Promise.resolve();
                                 }
-                                return Promise.reject('请输入正确的网站域名，如www.lizc.net');
+                                return Promise.reject(
+                                    'Vui lòng nhập đúng tên miền trang web, chẳng hạn như www.saltblog.io'
+                                );
                             },
                         },
                     ]}
@@ -71,27 +73,27 @@ export default function Settings() {
                     value={data.siteIcp}
                     label="Nộp trang web ICP"
                     name="siteIcp"
-                    placeholder="请输入备案icp"
+                    placeholder="Vui lòng nhập ICP nộp đơn"
                     loading={loading}
                     onFinish={onFinish}
                 ></EditableInput>
                 <EditableInput
                     type="upload"
-                    extra="目前仅支持svg文件上传，使用svg文件logo可以兼容主题换色。"
+                    extra="Hiện tại, chỉ các tệp SVG được tải lên. Sử dụng logo tệp SVG có thể tương thích với chủ đề."
                     value={data.siteLogo}
-                    label="网站LOGO"
+                    label="Logo trang web"
                     name="siteLogo"
                     loading={loading}
                     onFinish={onFinish}
                 ></EditableInput>
-                <div className={style.tip}>网站 META 配置</div>
+                <div className={style.tip}>Cấu hình meta trang web</div>
                 <EditableInput
                     type="textarea"
                     autoSize={{ minRows: 2, maxRows: 4 }}
                     value={data.siteMetaKeyWords}
                     label="META keywords"
                     name="siteMetaKeyWords"
-                    placeholder="请输入keywords"
+                    placeholder="Vui lòng nhập từ khóa"
                     loading={loading}
                     onFinish={onFinish}
                 ></EditableInput>
@@ -99,9 +101,9 @@ export default function Settings() {
                     type="textarea"
                     autoSize={{ minRows: 3, maxRows: 6 }}
                     value={data.siteMetaDescription}
-                    label="META 描述"
+                    label="Mô tả meta"
                     name="siteMetaDescription"
-                    placeholder="请输入描述"
+                    placeholder="Vui lòng nhập mô tả"
                     loading={loading}
                     onFinish={onFinish}
                 ></EditableInput>

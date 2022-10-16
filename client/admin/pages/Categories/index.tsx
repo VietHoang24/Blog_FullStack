@@ -76,7 +76,7 @@ export default function Index() {
                 dataIndex: 'articleCount',
             },
             {
-                title: 'vận hành',
+                title: 'Hành động',
                 key: 'operation',
                 width: 180,
                 render: (text, record) => (
@@ -90,7 +90,7 @@ export default function Index() {
                         >
                             Chỉnh sửa
                         </Button>
-                        
+
                         <Popconfirm title="Xác nhận rằng bạn muốn xóa?" onConfirm={() => deleteCategory(record._id)}>
                             <Button danger={true} size="small" title="Xóa" icon={<DeleteFilled />}>
                                 Xóa

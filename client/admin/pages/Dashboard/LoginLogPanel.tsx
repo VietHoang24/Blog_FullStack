@@ -10,7 +10,7 @@ interface Props {
 export default function LoginLogPanel(props: Props) {
     const { recentAdminLogs = [], loading = false } = props;
     return (
-        <Card style={{ marginBottom: 14 }} bordered={false} title="操作日志" loading={loading}>
+        <Card style={{ marginBottom: 14 }} bordered={false} title="Nhật ký hoạt động" loading={loading}>
             <div>
                 {recentAdminLogs.map((item: any) => (
                     <List.Item key={item._id} style={{ borderBottom: '1px solid #ccc' }}>

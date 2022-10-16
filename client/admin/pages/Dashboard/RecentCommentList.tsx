@@ -18,7 +18,7 @@ export default function RecentCommentList(props: Props) {
         <Card
             className={style.recentCommentListCard}
             style={{ marginBottom: 24 }}
-            title="Những ý kiến ​​gần đây"
+            title="Những bình luận ​​gần đây"
             bordered={false}
             bodyStyle={{ padding: 0 }}
             loading={loading}

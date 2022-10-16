@@ -70,7 +70,7 @@ export default function Index(props: Props) {
                                 setDisabled(!disabled);
                             }}
                         >
-                            <EditOutlined></EditOutlined>编辑
+                            <EditOutlined></EditOutlined>Chỉnh sửa
                         </Button>
                     )}
                 </label>
@@ -87,7 +87,7 @@ export default function Index(props: Props) {
             {!disabled && (
                 <Form.Item className="footer">
                     <Button type="primary" htmlType="submit" loading={loading}>
-                        <SendOutlined></SendOutlined>保存
+                        <SendOutlined></SendOutlined>Giữ cho
                     </Button>
                     <Button
                         type="default"
@@ -97,7 +97,7 @@ export default function Index(props: Props) {
                             form.setFieldsValue({ [name]: value });
                         }}
                     >
-                        取消
+                        Hủy bỏ
                     </Button>
                 </Form.Item>
             )}

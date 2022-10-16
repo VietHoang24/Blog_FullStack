@@ -103,7 +103,10 @@ export default function Index() {
                                 >
                                     Chỉnh sửa
                                 </Button>
-                                <Popconfirm title="Xác nhận rằng bạn muốn xóa?" onConfirm={() => deleteArticle(record._id)}>
+                                <Popconfirm
+                                    title="Xác nhận rằng bạn muốn xóa?"
+                                    onConfirm={() => deleteArticle(record._id)}
+                                >
                                     <Button danger type="link" size="small" title="Xóa bỏ" icon={<DeleteFilled />}>
                                         Xóa
                                     </Button>
@@ -133,7 +136,11 @@ export default function Index() {
                 title: 'Trạng thái',
                 dataIndex: 'isDraft',
                 render: (text, record) =>
-                    record.isDraft ? <Tag color="rgb(229, 239, 245);">Dự thảo</Tag> : <Tag color="default">Được phát hành</Tag>,
+                    record.isDraft ? (
+                        <Tag color="rgb(229, 239, 245);">Dự thảo</Tag>
+                    ) : (
+                        <Tag color="default">Được phát hành</Tag>
+                    ),
             },
             {
                 title: 'Thời điểm tạo',
@@ -175,7 +182,7 @@ export default function Index() {
                     icon={<PlusOutlined />}
                     onClick={() => Router.push('/admin/content/articles/edit')}
                 >
-                    Thêm một tài liệu
+                    Thêm bài viết
                 </Button>
                 <Popconfirm
                     title="Xác nhận rằng bạn muốn xóa?"
@@ -232,7 +239,7 @@ export default function Index() {
                         }));
                     }}
                 >
-                    nhập lại
+                    Nhập lại
                 </Button>
             </Space>
         </Row>
