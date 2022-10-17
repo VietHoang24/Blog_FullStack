@@ -11,9 +11,9 @@ export const APP_SERVER = {
 
 export const MONGODB = {
     uri: isDevMode
-        ? 'mongodb://localhost:27017/dev'
+        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/dev'
         : isTestMode
-        ? 'mongodb://localhost:27017/test'
+        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/test'
         : process.env.MONGODB_URL ||
           `mongodb://${process.env.MONGODB_HOSTNAME || 'localhost'}:${process.env.MONGODB_PORT || '27017'}/blog`,
     username: process.env.MONGODB_USERNAME || '',
@@ -25,9 +25,9 @@ export const TOKEN_SECRET_KEY = 'NODEBLOG/bs32g1038@163.com/TOKEN';
 export const GITHUB_SECRET_KEY = 'Github/bs32g1038@163.com/TOKEN';
 
 export const ADMIN_USER_INFO = {
-    nickName: '李志成',
-    email: 'bs32g1038@163.com',
-    location: '广东 广州',
+    nickName: 'Viet Salt',
+    email: 'vietprock@gmail.com',
+    location: 'Vietnam',
 };
 
 export const RSS = {

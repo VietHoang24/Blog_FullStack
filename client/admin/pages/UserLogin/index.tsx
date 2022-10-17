@@ -39,60 +39,59 @@ export default function UserLogin() {
                     <ReactSVG className="brand" src={appConfig?.siteLogo} />
                     <div className="header-title">
                         <h2>{appConfig?.siteTitle}</h2>
-                        <p>轻量级 NODE BLOG 系统</p>
+                        <p>Đăng nhập vào salt blog</p>
                     </div>
                 </div>
                 <div className={style.signInPanel}>
                     <div className={style.signInHeader}>
-                        <h3 className={style.signInTitle}>后台登陆</h3>
+                        <h3 className={style.signInTitle}>Đăng nhập</h3>
                     </div>
                     {data && <Alert message={data.message} type="warning" style={{ margin: '0 20px 20px 20px' }} />}
                     <Form onFinish={handleLogin} className="login-form">
                         {data && (
                             <Form.Item
                                 name="userName"
-                                label="用户名："
+                                label="Tên đăng nhập:"
                                 labelCol={{ span: 6 }}
                                 wrapperCol={{ span: 16 }}
-                                rules={[{ required: true, message: '请输入你的用户名!' }]}
+                                rules={[{ required: true, message: 'Xin hãy điền tên đăng nhập!' }]}
                             >
-                                <Input prefix={<AliwangwangOutlined />} placeholder="请输入" />
+                                <Input prefix={<AliwangwangOutlined />} placeholder="Vui lòng nhập" />
                             </Form.Item>
                         )}
                         <Form.Item
                             name="account"
-                            label="账号："
+                            label="Tài khoản:"
                             labelCol={{ span: 6 }}
                             wrapperCol={{ span: 16 }}
-                            rules={[{ required: true, message: '请输入你的账号!' }]}
+                            rules={[{ required: true, message: 'Vui lòng nhập tài khoản của bạn!' }]}
                         >
-                            <Input prefix={<UserOutlined />} placeholder="请输入" />
+                            <Input prefix={<UserOutlined />} placeholder="Vui lòng nhập" />
                         </Form.Item>
                         <Form.Item
                             name="password"
-                            label="密码："
+                            label="Mật khẩu:"
                             labelCol={{ span: 6 }}
                             wrapperCol={{ span: 16 }}
-                            rules={[{ required: true, message: '请输入你的密码!' }]}
+                            rules={[{ required: true, message: 'Vui lòng nhập mật khẩu của bạn!' }]}
                         >
-                            <Input prefix={<LockOutlined />} type="password" placeholder="请填写" />
+                            <Input prefix={<LockOutlined />} type="password" placeholder="Vui lòng điền" />
                         </Form.Item>
-                        <Form.Item label="操作：" labelCol={{ span: 6 }} wrapperCol={{ span: 16 }}>
+                        <Form.Item label="Hành động:" labelCol={{ span: 6 }} wrapperCol={{ span: 16 }}>
                             <Button loading={loading} type="primary" htmlType="submit" className="login-form-button">
-                                登陆
+                                Đăng nhập
                             </Button>
                         </Form.Item>
                     </Form>
                 </div>
                 <div className="nodeblog">
-                    Powered by
-                    <a
+Được cung cấp bởi                    <a
                         href={appConfig?.siteDomain}
-                        title="轻量级nodeblog博客系统"
+                        title="Hệ thống blog "
                         rel="noopener noreferrer"
                         target="_blank"
                     >
-                        LIZCBLOG
+                    Việt Salt
                     </a>
                 </div>
             </div>

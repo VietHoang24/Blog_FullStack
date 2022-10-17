@@ -6,7 +6,9 @@ services:
       - db
     command: npm run start:prod
     environment:
-      - MONGODB_URL=mongodb://db:27017/blog_test
+      - MONGODB_URL=mongodb+srv://Vietsalt:<Emgaimua1>@cluster0.nhyzzlj.mongodb.net/test
+
+
     ports:
       - 8080:8080
   db:
