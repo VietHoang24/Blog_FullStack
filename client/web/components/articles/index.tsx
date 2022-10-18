@@ -33,7 +33,7 @@ const Page = () => {
                         </div>
                     ))}
                 {!isLoading && data.items.length <= 0 ? (
-                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>暂无数据~~</span>} />
+                    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>Không có dữ liệu~~</span>} />
                 ) : (
                     data.items.map((item) => <ArticleItem item={item} key={item._id}></ArticleItem>)
                 )}

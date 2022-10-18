@@ -24,7 +24,7 @@ export default function EmailInput(props: Props) {
     const [form] = Form.useForm();
     const onFinish = (values) => {
         injectRequestLoading(updateEmailConfig(values)).then(() => {
-            message.success('更新成功');
+            message.success('hoàn thành cập nhật');
         });
     };
     useEffect(() => {
@@ -33,7 +33,7 @@ export default function EmailInput(props: Props) {
     return (
         <Form form={form} className="form" layout="vertical" onFinish={onFinish} wrapperCol={{ span: 16 }}>
             <div className={style.tip}>
-                网站邮箱服务通知配置
+                Cấu hình thông báo dịch vụ hộp thư trang web
                 {disabled && (
                     <Button
                         type="link"
@@ -42,7 +42,7 @@ export default function EmailInput(props: Props) {
                             setDisabled(!disabled);
                         }}
                     >
-                        <EditOutlined></EditOutlined>编辑
+                        <EditOutlined></EditOutlined>chỉnh sửa
                     </Button>
                 )}
             </div>

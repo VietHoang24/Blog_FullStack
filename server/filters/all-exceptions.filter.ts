@@ -34,7 +34,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
 
         return response.status(status).json({
             statusCode: status,
-            message: '服务器罢工了，请稍后再重试',
+            message: 'Máy chủ đình công, vui lòng thử lại sau',
         });
     }
 }

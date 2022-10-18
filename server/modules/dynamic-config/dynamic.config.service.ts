@@ -29,7 +29,7 @@ export class DynamicConfigService {
                     key: CONFIG_KEY,
                     ...config,
                 });
-                logger.info('初始化配置成功！');
+                logger.info('Cấu hình khởi tạo là thành công!');
                 return this.setConfig(data.toObject());
             }
             return this.setConfig(res.toObject());
@@ -86,7 +86,7 @@ export class DynamicConfigService {
         try {
             await this.generateIco(content);
         } catch (error) {
-            logger.error('生成 favicon 异常', error);
+            logger.error('phát ra favicon khác thường', error);
         }
         return this.siteDomain + '/static/logo.svg';
     }
@@ -100,7 +100,7 @@ export class DynamicConfigService {
                 .png()
                 .toFile(pngPath, async (err) => {
                     if (err) {
-                        reject(new Error('生成favicon.png文件出错'));
+                        reject(new Error('Tạo favicon.Lỗi tệp PNG'));
                     }
                     try {
                         toIco(await fs.readFile(pngPath)).then(async (buf) => {
@@ -108,7 +108,7 @@ export class DynamicConfigService {
                             this.setIsHasfavicon(true);
                         });
                     } catch (err) {
-                        reject(new Error('生成favicon.ico文件出错'));
+                        reject(new Error('Tạo favicon.Lỗi tệp ICO'));
                     }
                     resolve(true);
                 });

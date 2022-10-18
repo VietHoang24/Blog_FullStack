@@ -127,25 +127,25 @@ export default React.memo(function Index(props: Props) {
                                     });
                                 }}
                             >
-                                添加链接
+                                Thêm một liên kết
                             </Button>
                             <Space>
                                 <Form.Item
-                                    label="链接"
+                                    label="Liên kết"
                                     name={'title' + index}
-                                    rules={[{ required: true, message: '请输入' }]}
+                                    rules={[{ required: true, message: 'Vui lòng nhập' }]}
                                 >
                                     <Select style={{ width: 120 }}>
-                                        <Select.Option value="网站">网站</Select.Option>
-                                        <Select.Option value="文档">文档</Select.Option>
+                                        <Select.Option value="trang mạng">trang mạng</Select.Option>
+                                        <Select.Option value="Tài liệu">Tài liệu</Select.Option>
                                         <Select.Option value="Github">Github</Select.Option>
-                                        <Select.Option value="链接">链接</Select.Option>
-                                        <Select.Option value="推特">推特</Select.Option>
-                                        <Select.Option value="微博">微博</Select.Option>
+                                        <Select.Option value="Liên kết">Liên kết</Select.Option>
+                                        <Select.Option value="Twitter">Twitter</Select.Option>
+                                        <Select.Option value="Weibo">Weibo</Select.Option>
                                     </Select>
                                 </Form.Item>
                                 <Form.Item name={'link' + index} style={{ width: '100%' }}>
-                                    <Input placeholder="请输入链接地址" />
+                                    <Input placeholder="Vui lòng nhập địa chỉ liên kết" />
                                 </Form.Item>
                             </Space>
                         </div>
@@ -170,9 +170,9 @@ export default React.memo(function Index(props: Props) {
                     <Space>
                         <Button htmlType="submit" type="primary">
                             <SendOutlined />
-                            发布话题
+                            Xuất bản chủ đề
                         </Button>
-                        <Button onClick={props.onCancel}>取消</Button>
+                        <Button onClick={props.onCancel}>Hủy bỏ</Button>
                     </Space>
                 </Form.Item>
             </Form>

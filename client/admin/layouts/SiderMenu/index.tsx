@@ -143,7 +143,7 @@ export default function SiderMenu(props: Props) {
                                             <Link href="/admin/user/person" passHref={true}>
                                                 <a>
                                                     <SettingOutlined />
-                                                    <span>配置个人信息</span>
+                                                    <span>Định cấu hình thông tin cá nhân</span>
                                                 </a>
                                             </Link>
                                         ),
@@ -153,7 +153,7 @@ export default function SiderMenu(props: Props) {
                                         label: (
                                             <div onClick={() => logout()}>
                                                 <LogoutOutlined />
-                                                <span>退出登录</span>
+                                                <span>đăng xuất</span>
                                             </div>
                                         ),
                                     },
