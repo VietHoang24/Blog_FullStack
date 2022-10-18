@@ -11,7 +11,7 @@ export const APP_SERVER = {
 
 export const MONGODB = {
     uri: isDevMode
-        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/dev'
+        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/test'
         : isTestMode
         ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/test'
         : process.env.MONGODB_URL ||
