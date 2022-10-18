@@ -11,10 +11,10 @@ export const APP_SERVER = {
 
 export const MONGODB = {
     uri: isDevMode
-        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/test'
+        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority'
         : isTestMode
-        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/test'
-        : process.env.MONGODB_URL ||
+        ? 'mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority'
+        : "mongodb+srv://Vietsalt:Emgaimua1@cluster0.nhyzzlj.mongodb.net/?retryWrites=true&w=majority"||process.env.MONGODB_URL ||
           `mongodb://${process.env.MONGODB_HOSTNAME || 'localhost'}:${process.env.MONGODB_PORT || '27017'}/blog`,
     username: process.env.MONGODB_USERNAME || '',
     password: process.env.MONGODB_PASSWORD || '',
