@@ -24,9 +24,9 @@ const App = (props: { children?: ReactNode }) => {
             <Head>
                 <meta content={config?.siteMetaKeyWords} name="Keywords" />
                 <meta content={config?.siteMetaDescription} name="description" />
-                <meta http-equiv="Content-Security-Policy" content="default-src *;
+                {/* <meta http-equiv="Content-Security-Policy" content="default-src *;
    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
-   style-src  'self' 'unsafe-inline' *"></meta>
+   style-src  'self' 'unsafe-inline' *"></meta> */}
             </Head>
             {theme === 'light' ? (
                 <Global
