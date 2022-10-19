@@ -21,8 +21,7 @@ export const AppFooter = () => {
                         <p className={style.siteTitle}>Chào mừng bạn đến {config.siteTitle} 😀</p>
                     </div>
                     <p className={style.siteTitle}>
-                        Ở đây chúng tôi chủ yếu chia sẻ các bài báo công nghệ mặt trận, dành riêng cho nghiên cứu công
-                        nghệ web.
+                    {config.siteMetaDescription}
                     </p>
                 </div>
                 <div className={style.contact}>

@@ -71,7 +71,7 @@ export class LoginService {
         });
         if (user) {
             this.adminLogService.create({
-                data: `người sử dụng:${user.account} Đăng nhập hệ thống nền`,
+                data: `Tài khoản : ${user.account} Đăng nhập hệ thống`,
                 type: 'Đăng nhập hệ thống',
                 user: user._id,
             });

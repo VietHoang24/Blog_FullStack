@@ -4,7 +4,7 @@ import versionInfo from '../package.json';
 import { wrapper } from '@blog/client/redux/store';
 import { fetchConfig } from '@blog/client/web/api';
 import { ConfigProvider } from 'antd';
-import zhCN from 'antd/lib/locale/zh_CN';
+import viVN from 'antd/lib/locale/vi_VN';
 
 import 'antd/dist/antd.css';
 import 'react-image-crop/dist/ReactCrop.css';
@@ -36,7 +36,7 @@ class MyApp extends App {
     public render() {
         const { Component, pageProps } = this.props as any;
         return (
-            <ConfigProvider locale={zhCN}>
+            <ConfigProvider locale={viVN}>
                 <Component {...pageProps} />
             </ConfigProvider>
         );

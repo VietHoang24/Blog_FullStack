@@ -29,11 +29,11 @@ const SearchResultFooter = (props: { isLoading: boolean; totalCount: number }) =
     return (
         <div className={style.panelFooter}>
             {isLoading ? (
-                <div>正在搜索数据...</div>
+                <div>Tìm kiếm dữ liệu...</div>
             ) : (
                 <div>
                     <GithubIcon width="16px" height="16px"></GithubIcon>
-                    {totalCount <= 0 ? '没有该搜索结果' : `共 ${totalCount} 条记录，可尝试其他关键字👍`}
+                    {totalCount <= 0 ? 'Không có kết quả tìm kiếm' : `共 ${totalCount} Bản ghi thanh, thử các từ khóa khác 👍`}
                 </div>
             )}
         </div>

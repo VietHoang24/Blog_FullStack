@@ -2,9 +2,9 @@
  * 时间函数
  */
 import dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn';
+import 'dayjs/locale/vi';
 import relativeTime from 'dayjs/plugin/relativeTime';
-dayjs.locale('zh-cn');
+dayjs.locale('vi');
 dayjs.extend(relativeTime);
 
 export const timeAgo = (timestamp: string) => {

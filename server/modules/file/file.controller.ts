@@ -15,7 +15,6 @@ export class FileController {
     @Roles('admin')
     @UseInterceptors(FileInterceptor('file'))
     async upload(@UploadedFile() file: any) {
-        console.log('hihi');
         return await this.fileService.uploadFile(file);
     }
 
