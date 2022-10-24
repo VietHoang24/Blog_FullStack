@@ -69,6 +69,7 @@ export class FileService {
     }
 
     public async uploadFile(file: Express.Multer.File) {
+        console.log("file: ",file)
         const mimetype = file.mimetype;
         const size = file.size;
         const name = md5(file.buffer);
@@ -90,9 +91,9 @@ export class FileService {
             }
         }
 
-        // 文件处理
+        // Xử lý tập tin
         const domain = this.configService.siteDomain;
-        const p = await creteUploadFile(fileName, file.buffer);
+        const p = await creteUploadFile(fileName, file.buffer,file);
         const url = domain + p;
         const result = await this.fileModel.findOneAndUpdate({ name: fileName }, { url });
         if (result) {

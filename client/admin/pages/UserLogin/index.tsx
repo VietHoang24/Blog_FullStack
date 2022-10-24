@@ -18,7 +18,7 @@ export default function UserLogin() {
         const str = encrypt(JSON.stringify(_data));
         await injectRequestLoading(axios.post('/login', { key: str }))
             .then((res) => {
-                message.success('登陆成功！');
+                message.success('Đăng nhập thành công!');
                 localStorage.setItem(defaultConfig.userInfoKey, JSON.stringify(res.data));
                 localStorage.setItem(defaultConfig.tokenKey, res.data.token);
                 Router.push('/admin/dashboard');

@@ -8,7 +8,7 @@ export const auth = (req: Request) => {
         try {
             return jwt.verify((req.headers as any).authorization, TOKEN_SECRET_KEY);
         } catch (err) {
-            throw new UnauthorizedException('尚未登录！！', err.message);
+            throw new UnauthorizedException('Chưa đăng nhập!', err.message);
         }
     }
     return null;
