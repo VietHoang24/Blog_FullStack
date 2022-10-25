@@ -53,7 +53,7 @@ export default function InfoForm() {
 
     const onFinish = (values) => {
         return injectRequestLoading(updateUserInfo({ ...values, avatar: values.avatar[0].url })).then(() => {
-            message.success('更新成功！');
+            message.success('Hoàn thành cập nhật!');
         });
     };
 
@@ -67,33 +67,33 @@ export default function InfoForm() {
             style={{ maxWidth: '540px', margin: '0 auto', width: '100%' }}
         >
             <Alert
-                message="数据更改后，将会在下次登录生效！"
+                message="Sau khi dữ liệu được thay đổi, nó sẽ có hiệu lực vào lần tới!"
                 type="warning"
                 showIcon={true}
                 style={{ marginBottom: '10px' }}
             />
             <Form.Item
                 required={true}
-                label="头像"
+                label="Hình đại diện"
                 name="avatar"
                 valuePropName="fileList"
                 getValueFromEvent={handleUpload}
-                rules={[{ required: true, message: '封面图片不能为空!' }]}
+                rules={[{ required: true, message: 'Ảnh bìa không thể trống!' }]}
             >
                 <UploadButton></UploadButton>
             </Form.Item>
             <Form.Item
                 name="userName"
-                label="用户名"
-                extra="建议使用一个易记的用户名，方便人们认识你"
+                label="Tên tài khoản"
+                extra="Nên sử dụng tên người dùng dễ dàng để tạo điều kiện cho mọi người biết bạn"
                 rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
             >
-                <Input size="large" placeholder="请输入用户名" />
+                <Input size="large" placeholder="Vui lòng nhập tên người dùng" />
             </Form.Item>
             <Form.Item
                 name="email"
-                label="邮箱"
-                extra="邮箱用于接收系统通知"
+                label="Thư"
+                extra="Hộp thư được sử dụng để nhận thông báo hệ thống"
                 rules={[
                     {
                         type: 'email',
@@ -105,11 +105,11 @@ export default function InfoForm() {
                     },
                 ]}
             >
-                <Input size="large" placeholder="请输入邮箱" />
+                <Input size="large" placeholder="Vui lòng nhập email của bạn" />
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>
                 <Button loading={loading} type="primary" htmlType="submit">
-                    保存
+                    giữ cho
                 </Button>
             </Form.Item>
             <Divider />

@@ -24,6 +24,7 @@ const App = (props: { children?: ReactNode }) => {
             <Head>
                 <meta content={config?.siteMetaKeyWords} name="Keywords" />
                 <meta content={config?.siteMetaDescription} name="description" />
+                {/* <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1239.0.min.js"></script> */}
                 {/* <meta http-equiv="Content-Security-Policy" content="default-src *;
    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
    style-src  'self' 'unsafe-inline' *"></meta> */}

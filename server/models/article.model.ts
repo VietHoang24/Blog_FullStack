@@ -30,7 +30,7 @@ export const ArticleJoiSchema = {
         }),
     screenshot: Joi.string()
         .trim()
-        .max(100)
+        .max(200)
         .alter({
             post: (schema) => schema.required(),
         }),
@@ -69,7 +69,7 @@ export class Article {
     @Prop({ maxlength: 1000, trim: true, required: true })
     summary: string;
 
-    @Prop({ maxlength: 100, trim: true })
+    @Prop({ maxlength: 200, trim: true })
     screenshot: string;
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Category.name, required: true })

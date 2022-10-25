@@ -74,7 +74,7 @@ const Item = (props: any) => {
                         }}
                     ></LazyLoad>
                 </div>
-                <div title={item.title + ' 访问趋势'} style={{ height: '28px', width: '100%' }}>
+                <div title={item.title } style={{ height: '28px', width: '100%' }}>
                     <TinyArea {...config} />
                 </div>
             </div>

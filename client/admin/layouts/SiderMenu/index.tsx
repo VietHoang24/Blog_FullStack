@@ -111,7 +111,7 @@ export default function SiderMenu(props: Props) {
                     boxShadow: 'none',
                 }}
             >
-                <Link href="/admin/dashboard">
+                <Link href="/blog">
                     <a>
                         <div className={style.logo}>
                             <ReactSVG src={config.siteLogo} />

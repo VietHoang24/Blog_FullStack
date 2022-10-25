@@ -26,9 +26,9 @@ const BackTopButton = () => {
         }
     }, []);
     return (
-        <div className={style.backTopButton} title="返回顶部">
+        <div className={style.backTopButton} title="Trở lại đầu trang">
             <div ref={$el}>
-                <svg data-title="回到顶部" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                <svg data-title="Quay lại đầu" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
                     <path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path>
                 </svg>
             </div>

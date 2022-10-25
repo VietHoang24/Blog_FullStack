@@ -26,34 +26,42 @@ const AWS = require("aws-sdk");
 const fs = require("fs");
 
 
-  export const creteUploadFile = async (fileName: string, fileBuffer: Buffer,file:Express.Multer.File) => {
+export const creteUploadFile = async (fileName: string, fileBuffer: Buffer, file: Express.Multer.File) => {
     console.log("lỗi à1     ")
     const BUCKET = AWS_INFOR.BUCKET;
     const REGION = AWS_INFOR.REGION;
     const ACCESS_KEY = AWS_INFOR.AWS_ACCESS_KEY;
     const SECRET_KEY = AWS_INFOR.AWS_SECRET_KEY;
     // const imageRemoteName = `directUpload_catImage_${new Date().getTime()}.jpeg`;
-
     AWS.config.update({
-    accessKeyId: ACCESS_KEY,
-    secretAccessKey: SECRET_KEY,
-    region: REGION
+        accessKeyId: ACCESS_KEY,
+        secretAccessKey: SECRET_KEY,
+        region: REGION
     });
-
     var s3 = new AWS.S3();
-
-    s3.putObject({
+    let s3url = s3.putObject({
         Bucket: BUCKET,
-        Body:  fileBuffer,
+        Body: fileBuffer,
         Key: fileName
     })
-    .promise()
-    .then(res => {
-        console.log(`Upload succeeded - `, res);
-    })
-    .catch(err => {
-        console.log("Upload failed:", err);
-    });
+        .promise()
+        .then(res => {
+            // s3Client.getResourceUrl("your-bucket", "some-path/some-key.jpg");
+
+            s3url = s3.getSignedUrl('getObject', { Bucket: BUCKET, Key: fileName });
+            //The key for the uploaded object
+            console.log(`Upload succeeded - `,s3url);
+            return s3url;
+
+        }).then((res) => {
+            // s3url = s3.getSignedUrl('getObject', {Bucket: BUCKET, Key: fileName});
+            //The key for the uploaded object
+            console.log(`Upload succeeded - `, res);
+            return `https://${BUCKET}.s3.ap-southeast-1.amazonaws.com/${fileName}`;
+        })
+        .catch(err => {
+            console.log("Upload failed:", err);
+        });
 
 
     // const _uploadPath = getUploadPathWithYear();
@@ -64,4 +72,7 @@ const fs = require("fs");
     // await writeFile(basePath + '/' + fileName, fileBuffer);
     // const url = _uploadPath + '/' + fileName;
     // return url;
+    console.log(`s3url là:  - `,s3url);
+
+    return s3url;
 };

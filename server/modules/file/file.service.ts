@@ -94,7 +94,8 @@ export class FileService {
         // Xử lý tập tin
         const domain = this.configService.siteDomain;
         const p = await creteUploadFile(fileName, file.buffer,file);
-        const url = domain + p;
+        console.log("url là: ",p)
+        const url = p;
         const result = await this.fileModel.findOneAndUpdate({ name: fileName }, { url });
         if (result) {
             return { ...result.toObject(), url };
