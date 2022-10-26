@@ -69,7 +69,7 @@ export default function Index() {
     const publish = (data) => {
         const { id } = router.query;
         const content = editor.getMarkdown();
-        if (!isLength(content, { min: 1, max: 15000 })) {
+        if (!isLength(content, { min: 1, max: 100000 })) {
             return message.error('Chi tiết bài viết không thể trống và tối đa 15.000 ký tự!');
         }
         Object.assign(data, {

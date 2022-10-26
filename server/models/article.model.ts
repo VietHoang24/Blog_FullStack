@@ -17,7 +17,7 @@ export const ArticleJoiSchema = {
     content: Joi.string()
         .trim()
         .min(1)
-        .max(15000)
+        .max(100000)
         .alter({
             post: (schema) => schema.required(),
         }),
@@ -63,7 +63,7 @@ export class Article {
     @Prop({ maxlength: 80, trim: true, required: true })
     title: string;
 
-    @Prop({ maxlength: 15000, trim: true, required: true })
+    @Prop({ maxlength: 100000, trim: true, required: true })
     content: string;
 
     @Prop({ maxlength: 1000, trim: true, required: true })
