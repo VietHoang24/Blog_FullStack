@@ -17,7 +17,6 @@ export class ArticleService {
     ) {}
 
     async create(articleDocument: Article) {
-        console.log('article là: ', articleDocument);
         const article = await this.articleModel.create(articleDocument);
         await this.categoryModel.updateOne({ _id: article.category }, { $inc: { articleCount: 1 } });
         return article;
@@ -28,7 +27,7 @@ export class ArticleService {
             runValidators: true,
         });
         if (isEmpty(article)) {
-            throw new BadRequestException('找不到该文章！');
+            throw new BadRequestException('Không thể tìm thấy bài viết này!');
         }
         if (article.category && !isEqual(article.category.toString(), data.category)) {
             const reduceArticleCountForOldCateory = this.categoryModel.updateOne(
@@ -76,7 +75,7 @@ export class ArticleService {
             .populate('category');
 
         if (isEmpty(article)) {
-            throw new NotFoundException('没有该文章');
+            throw new NotFoundException('Không có bài viết này');
         }
 
         const timestamp = new Date(new Date().setHours(0, 0, 0, 0)).valueOf();
@@ -131,7 +130,7 @@ export class ArticleService {
     public async batchDelete(articleIds: string[]) {
         return this.articleModel.find({ _id: { $in: articleIds } }).then(async (articles) => {
             if (articles.length <= 0) {
-                throw new NotFoundException('没有可删除的文章条目');
+                throw new NotFoundException('Không có bài viết nào bị xóa');
             }
             articles.map(async (article: Article) => {
                 return await this.categoryModel.updateOne({ _id: article.category }, { $inc: { articleCount: -1 } });

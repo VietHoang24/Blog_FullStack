@@ -3,6 +3,7 @@ import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { Upload, message } from 'antd';
 import config from '@blog/client/configs/admin.default.config';
 import { isEqual } from 'lodash';
+import { RcFile } from 'antd/lib/upload';
 
 function svgBeforeUpload(file) {
     const isSvg = file.type === 'image/svg+xml';
@@ -31,6 +32,13 @@ function beforeUpload(file) {
     }
     return isJpgOrPng && isLt10M;
 }
+const getBase64 = (file: RcFile): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = error => reject(error);
+  })
 
 interface Props {
     style?: object;
@@ -46,7 +54,16 @@ const Index = (props: Props) => {
     const [isUploading, setUploading] = useState(false);
     const [imageUrl, setImageUrl] = useState('');
 
-    const handleUpload = (info) => {
+    const handleUpload =(info) => {
+        
+        let {file} = info;
+        const getUrl= async (file) => {
+            let  b64Url =await getBase64(file.originFileObj as RcFile)
+   
+            setImageUrl(b64Url)
+        }
+       
+        
         if (Array.isArray(info)) {
             return info;
         }
@@ -54,7 +71,8 @@ const Index = (props: Props) => {
             setUploading(true);
         }
         if (info.file.status === 'done') {
-            setImageUrl(info.file.response.url);
+            getUrl(file)
+            // setImageUrl(info.file.response.url);
             setUploading(false);
             const fileList =
                 info &&

@@ -266,10 +266,10 @@ const ImageCropper: FC<ImageCropperProps> = (props) => {
                             aspect={aspectRatio}
                             crop={crop}
                             keepSelection
-                            maxWidth={maxWidth}
-                            minWidth={minWidth}
-                            maxHeight={maxHeight}
-                            minHeight={minHeight}
+                            // maxWidth={maxWidth}
+                            // minWidth={minWidth}
+                            // maxHeight={maxHeight}
+                            // minHeight={minHeight}
                             ruleOfThirds={grid}
                             circularCrop={circularCrop}
                             locked={Boolean(cropWidth || cropHeight)}
