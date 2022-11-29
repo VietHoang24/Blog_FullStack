@@ -1,13 +1,14 @@
 {
   "name": "node-blog",
   "version": "5.0.0-beta.2",
+  "engines": { "node": "14.15.0", "npm": "6.14.4" },
   "description": "A simple and whole blog",
-  "homepage": "https://www.lizc.net",
-  "github": "https://github.com/bs32g1038",
+  "homepage": "homnayangi.site",
+  "github": "https://github.com/viethoang24",
   "license": "MIT",
   "author": {
-    "name": "Jason Li",
-    "email": "bs32g1038@163.com"
+    "name": "Viet Salt",
+    "email": "viethoangquoc2312@gmail.com"
   },
   "scripts": {
     "prebuild:server": "rimraf dist",
