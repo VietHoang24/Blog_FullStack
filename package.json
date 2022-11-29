@@ -1,8 +1,8 @@
 {
   "name": "node-blog",
   "version": "5.0.0-beta.2",
-  "engines": { "node": "14.15.0", "npm": "6.14.4" },
-  "description": "A simple and whole blog",
+  "engines": { "node": "14.15.0", "npm": "6.14.8" },
+  "description": "Trang web gợi ý hôm nay ăn gì?",
   "homepage": "homnayangi.site",
   "github": "https://github.com/viethoang24",
   "license": "MIT",
